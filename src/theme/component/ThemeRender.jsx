@@ -9,7 +9,7 @@ import BreadCrumb from "./BreadCrumb";
 import { Content } from "./Content";
 
 const ThemeRender = (props) => {
-  console.log("======" + props.data.section[0].title);
+  console.log("======" + props.data.section);
   return (
     <body
       data-typography="poppins"

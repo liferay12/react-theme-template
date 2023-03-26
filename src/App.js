@@ -1,10 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
-import $  from 'jquery';
+import $ from 'jquery';
 import ThemeRender from "./theme/component/ThemeRender";
-import themeData from "./theme/theme.json";
+import themeData from "./theme/theme";
 import { useEffect } from "react";
 import { W3Crm } from "./theme/js/custom";
+import { Test } from "./theme/component/Test";
 // import {apexchart} from './theme/js';
 
 function App() {
@@ -22,9 +23,14 @@ function App() {
   //   }, 1000);
   // }, []);
 
+  console.log(themeData);
+
+
+
   return (
     <>
       <ThemeRender data={themeData}></ThemeRender>;
+
     </>
   );
 }

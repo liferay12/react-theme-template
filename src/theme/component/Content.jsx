@@ -5,7 +5,7 @@ export const Content = (props) => {
         <>
             <Router>
                 <Routes>
-                    {props.data.section.map((section) => (
+                    {props.data.map((section) => (
                         <>
                             {section.option.map((item) => (
                                 <>
