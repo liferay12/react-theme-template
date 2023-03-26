@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-import { Test } from "./Test";
+
 export const Content = (props) => {
     return (
         <>
@@ -9,19 +9,32 @@ export const Content = (props) => {
                         <>
                             {section.option.map((item) => (
                                 <>
-                                    {item.subItem.length != 0 ? (
-                                        <Route
-                                            exact
-                                            path={item.path}
-                                            element={item.component}
-                                        />
-                                    ) : (
-                                        <Route
-                                            exact
-                                            path={item.path}
-                                            element={<Test></Test>}
-                                        />
-                                    )}
+                                    {
+                                        item.subItem.length != 0 ? (
+                                            <Route
+                                                exact
+                                                path={item.path}
+                                                element={item.component}
+                                            />
+                                        ) : (
+
+                                            <Route
+                                                exact
+                                                path={item.path}
+                                                element={item.component}
+                                            />
+
+                                            // item.subItem.map((subItem) =>
+                                            //     <>
+
+                                            //         <h2>HEllollllllll</h2>
+                                            //     </>
+                                            // )
+
+
+
+                                        )
+                                    }
                                 </>
                             ))}
                         </>

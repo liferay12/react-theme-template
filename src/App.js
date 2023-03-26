@@ -5,7 +5,7 @@ import ThemeRender from "./theme/component/ThemeRender";
 import themeData from "./theme/theme";
 import { useEffect } from "react";
 import { W3Crm } from "./theme/js/custom";
-import { Test } from "./theme/component/Test";
+import TopbarConfig from "./theme/TopbarConfig";
 // import {apexchart} from './theme/js';
 
 function App() {
@@ -22,9 +22,6 @@ function App() {
   //     W3Crm.handleMenuPosition();
   //   }, 1000);
   // }, []);
-
-  console.log(themeData);
-
 
 
   return (

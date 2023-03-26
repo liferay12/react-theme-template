@@ -1,12 +1,12 @@
 import { ChatBox } from "./ChatBox";
 import { SideBar } from "./SideBar";
 import { SideBarToggle } from "./SidebarToggle";
-//import { Test } from "./Test";
 import "../js/custom";
 import { Topbar } from "./TopBar";
 import "font-awesome/css/font-awesome.min.css";
 import BreadCrumb from "./BreadCrumb";
 import { Content } from "./Content";
+import TopbarConfig from "../TopbarConfig";
 
 const ThemeRender = (props) => {
   console.log("======" + props.data.section);
@@ -29,7 +29,7 @@ const ThemeRender = (props) => {
       <div id="main-wrapper" class="show">
         <SideBarToggle></SideBarToggle>
         <ChatBox></ChatBox>
-        <Topbar></Topbar>
+        <Topbar data={TopbarConfig}></Topbar>
         <SideBar themeData={props.data}></SideBar>
 
         <div class="content-body" style={{ minHeight: "939px" }}>
