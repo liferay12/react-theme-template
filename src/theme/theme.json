@@ -1,0 +1,132 @@
+{
+    "section": [
+        {
+            "title": "YOUR COMPANY",
+            "option": [
+                {
+                    "icon": "fas fa-heart",
+                    "name": "Dashboad",
+                    "path": "/Dashboad",
+                    "component": "Dashboad",
+                    "subItem": [
+                        {
+                            "icon": "icon-name",
+                            "name": "Dashboard-light",
+                            "path": "/light",
+                            "component": "Dashboard-light"
+                        },
+                        {
+                            "icon": "icon-name",
+                            "name": "Dashboard-dark",
+                            "path": "/dark",
+                            "component": "Dashboard-dark"
+                        }
+                    ]
+                },
+                {
+                    "icon": "icon-name",
+                    "name": "Employee",
+                    "path": "/Employee",
+                    "component": "Employee",
+                    "subItem": []
+                },
+                {
+                    "icon": "icon-name",
+                    "name": "Core HR",
+                    "path": "/core-hr",
+                    "component": "<Test2 />",
+                    "subItem": []
+                },
+                {
+                    "icon": "icon-name",
+                    "name": "Finance",
+                    "path": "/Finance",
+                    "component": "Finance",
+                    "subItem": []
+                }
+            ]
+        },
+        {
+            "title": "OUR FEACTURE",
+            "option": [
+                {
+                    "icon": "icon-name",
+                    "name": "name",
+                    "path": "/",
+                    "component": "component-name",
+                    "subItem": []
+                },
+                {
+                    "icon": "icon-name",
+                    "name": "name",
+                    "path": "/",
+                    "component": "component-name",
+                    "subItem": []
+                },
+                {
+                    "icon": "icon-name",
+                    "name": "name",
+                    "path": "/",
+                    "component": "component-name",
+                    "subItem": [
+                        {
+                            "icon": "icon-name",
+                            "name": "name",
+                            "path": "/",
+                            "component": "component-name"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "section2": [
+        {
+            "title": "YOUR COMPANY",
+            "option": [
+                {
+                    "icon": "icon-name",
+                    "name": "",
+                    "path": "/",
+                    "component": "component-name",
+                    "subItem": [
+                        {
+                            "icon": "icon-name",
+                            "name": "name",
+                            "path": "/",
+                            "component": "component-name"
+                        }
+                    ]
+                },
+                {
+                    "icon": "icon-name",
+                    "name": "name",
+                    "path": "/",
+                    "component": "component-name",
+                    "subItem": [
+                        {
+                            "icon": "icon-name",
+                            "name": "name",
+                            "path": "/",
+                            "component": "component-name"
+                        }
+                    ]
+                },
+                {
+                    "icon": "icon-name",
+                    "name": "name",
+                    "path": "/",
+                    "component": "component-name",
+                    "subItem": [
+                        {
+                            "icon": "icon-name",
+                            "name": "name",
+                            "path": "/",
+                            "component": "component-name"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
