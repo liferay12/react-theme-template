@@ -2,7 +2,7 @@ import { ChatBox } from "./ChatBox";
 import { SideBar } from "./SideBar";
 import { SideBarToggle } from "./SidebarToggle";
 //import { Test } from "./Test";
-import { Test1 } from "./Test1";
+import "../js/custom";
 import { Topbar } from "./TopBar";
 import "font-awesome/css/font-awesome.min.css";
 import BreadCrumb from "./BreadCrumb";

@@ -1,6 +1,6 @@
-import {$ } from 'jquery';
+import $  from 'jquery';
 
-var W3Crm = function(){
+export var W3Crm = ()=>{
 	//"use strict"
 	/* Search Bar ============== */
 	var screenWidth = $( window ).width();
@@ -397,49 +397,49 @@ var W3Crm = function(){
 		}
 	}
 	
-	// var handleDraggableCard = function() {
-	// 	var dzCardDraggable = function () {
-	// 	 return {
-	// 	  //main function to initiate the module
-	// 	  init: function () {
-	// 	   var containers = document.querySelectorAll('.draggable-zone');
+	var handleDraggableCard = function() {
+		var dzCardDraggable = function () {
+		 return {
+		  //main function to initiate the module
+		  init: function () {
+		   var containers = document.querySelectorAll('.draggable-zone');
 
-	// 	   if (containers.length === 0) {
-	// 		return false;
-	// 	   }
+		   if (containers.length === 0) {
+			return false;
+		   }
 
-	// 	   var swappable = new Sortable.default(containers, {
-	// 		draggable: '.draggable',
-	// 		handle: '.draggable.draggable-handle',
-	// 		mirror: {
-	// 		 appendTo: 'body',
-	// 		 constrainDimensions: true
-	// 		}
+		//    var swappable = new Sortable.default(containers, {
+		// 	draggable: '.draggable',
+		// 	handle: '.draggable.draggable-handle',
+		// 	mirror: {
+		// 	 appendTo: 'body',
+		// 	 constrainDimensions: true
+		// 	}
 			
-	// 	   });
-	// 	   swappable.on('drag:stop', () => {
-	// 			setTimeout(function(){
-	// 				setBoxCount();
-	// 			}, 200);
+		//    });
+		//    swappable.on('drag:stop', () => {
+		// 		setTimeout(function(){
+		// 			setBoxCount();
+		// 		}, 200);
 				
-	// 		})
-	// 	  }
-	// 	 };
-	// 	}();
+		// 	})
+		  }
+		 };
+		}();
 
-	// 	$(document).ready(function () {
-	// 	 dzCardDraggable.init();
-	// 	});
+		$(document).ready(function () {
+		 dzCardDraggable.init();
+		});
 		
 		
-	// 	function setBoxCount(){
-	// 		var cardCount = 0;
-	// 		$('.dropzoneContainer').each(function(){
-	// 			cardCount = $(this).find('.draggable-handle').length;
-	// 			$(this).find('.totalCount').html(cardCount);
-	// 		});
-	// 	}
-	// }
+		function setBoxCount(){
+			var cardCount = 0;
+			$('.dropzoneContainer').each(function(){
+				cardCount = $(this).find('.draggable-handle').length;
+				$(this).find('.totalCount').html(cardCount);
+			});
+		}
+	}
 
 	// loader 
 		
@@ -666,34 +666,11 @@ var W3Crm = function(){
 			handleMenuPosition();
 		}
 	}
-	
-}();
 
-/* Document.ready Start */	
-$(document).ready(function() {
-	$('[data-bs-toggle="popover"]').popover();
-    // 'use strict';
-	W3Crm.init();
-	
-});
-/* Document.ready END */
 
-/* Window Load START */
-$(window).on('load',function () {
-	//'use strict'; 
-	W3Crm.load();
-	setTimeout(function(){
-			W3Crm.handleMenuPosition();
-	}, 1000);
-	
-});
-/*  Window Load END */
-/* Window Resize START */
-$(window).on('resize',function () {
-	//'use strict'; 
-	W3Crm.resize();
-	setTimeout(function(){
-			W3Crm.handleMenuPosition();
-	}, 1000);
-});
+
+
 /*  Window Resize END */
+	
+}
+
