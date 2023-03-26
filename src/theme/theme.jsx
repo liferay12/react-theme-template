@@ -2,6 +2,7 @@ import { Finance } from "../component/Finance";
 import { Test } from "../component/Test";
 import { Test1 } from "../component/Test1";
 import { Task } from "../component/Task";
+import { Login } from "./component/Login";
 
 const section = [
     {
@@ -112,7 +113,7 @@ const section = [
                         "icon": "icon-Email",
                         "name": "Email",
                         "path": "/Email",
-                        "subComponent": "component-Email"
+                        "subComponent": <Login></Login>
                     }
                 ]
             },

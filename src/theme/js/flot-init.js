@@ -1,7 +1,9 @@
+import jQuery from 'jquery';
+
 (function($) {
-   "use strict"
+  // "use strict"
 
-
+var plot;
  var dlabChartlist = function(){
 	
 	var screenWidth = $(window).width();
@@ -385,7 +387,7 @@
 			$('#y').text(pos.y.toFixed(2));
 
 			if (item) {
-				if (previousPoint != item.dataIndex) {
+				if (previousPoint !== item.dataIndex) {
 					previousPoint = item.dataIndex;
 
 					$('#tooltip').remove();
@@ -620,15 +622,15 @@
 
 		$(".stackControls button").click(function (e) {
 			e.preventDefault();
-			stack = $(this).text() == "With stacking" ? true : null;
+			stack = $(this).text() === "With stacking" ? true : null;
 			plotWithOptions();
 		});
 
 		$(".graphControls button").click(function (e) {
 			e.preventDefault();
-			bars = $(this).text().indexOf("Bars") != -1;
-			lines = $(this).text().indexOf("Lines") != -1;
-			steps = $(this).text().indexOf("steps") != -1;
+			bars = $(this).text().indexOf("Bars") !== -1;
+			lines = $(this).text().indexOf("Lines") !== -1;
+			steps = $(this).text().indexOf("steps") !== -1;
 			plotWithOptions();
 		});
 

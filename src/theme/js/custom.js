@@ -417,12 +417,7 @@ export var W3Crm = ()=>{
 		// 	}
 			
 		//    });
-		//    swappable.on('drag:stop', () => {
-		// 		setTimeout(function(){
-		// 			setBoxCount();
-		// 		}, 200);
-				
-		// 	})
+		// 
 		  }
 		 };
 		}();

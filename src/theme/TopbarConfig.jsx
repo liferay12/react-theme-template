@@ -1,3 +1,5 @@
+import { Login } from "./component/Login";
+
 const TopbarConfig = [
 
     {
@@ -27,9 +29,9 @@ const TopbarConfig = [
     },
     {
         "type": "button",
-        "name": "ashwani",
-        "path": "/light",
-        "component": ""
+        "name": "Logout",
+        "path": "/login",
+        "component": <Login></Login>
     }
 
 ]

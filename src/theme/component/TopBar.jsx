@@ -1,4 +1,5 @@
 import { EmailService } from "../Service/EmailService";
+import { Login } from "./Login";
 
 
 export const Topbar = (props) => {
@@ -29,13 +30,13 @@ export const Topbar = (props) => {
 											{
 												item.type === "icon" ? (
 													<li className="nav-item dropdown notification_dropdown">
-														<a className="nav-link " href="javascript:void(0);" data-bs-toggle="dropdown">
+														<a className="nav-link " href={item.path} data-bs-toggle="dropdown">
 															{item.name}
 
 														</a>
 													</li>
 												) : (
-													<li className="nav-item align-items-center header-border"><a href="./page-login.html" className="btn btn-primary btn-sm">{item.name}</a></li>
+													<li className="nav-item align-items-center header-border"><a href={item.path} className="btn btn-primary btn-sm">{item.name}</a></li>
 
 												)
 											}
