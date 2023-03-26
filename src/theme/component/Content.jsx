@@ -14,16 +14,19 @@ export const Content = (props) => {
                                             item.subItem.map((subItem, j) =>
                                                 <>
 
-                                                    <Route key={subItem.path}
+                                                    <Route key={j}
                                                         exact
                                                         path={subItem.path}
-                                                        element={item.component}
+                                                        element={subItem.subComponent}
                                                     />
+                                                    {
+                                                        console.log(subItem.path+" : "+subItem.subComponent)
+                                                    }
                                                 </>
                                             )
                                         ) : (
 
-                                            <Route
+                                            <Route key={i}
                                                 exact
                                                 path={item.path}
                                                 element={item.component}

@@ -1,8 +1,7 @@
 import { Finance } from "../component/Finance";
-import Task from "../component/Task";
 import { Test } from "../component/Test";
 import { Test1 } from "../component/Test1";
-
+import { Task } from "../component/Task";
 
 const section = [
     {
@@ -20,13 +19,13 @@ const section = [
                         "icon": "",
                         "name": "Dashboard-light",
                         "path": "/light",
-                        "component": <Test></Test>
+                        "subComponent": <Test></Test>
                     },
                     {
                         "icon": "",
                         "name": "Dashboard-dark",
                         "path": "/dark",
-                        "component": <Test1></Test1>
+                        "subComponent": <Test1></Test1>
                     }
                 ]
             },
@@ -66,20 +65,20 @@ const section = [
                     <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z" />
                 </svg>,
                 "name": "tasks",
-                "path": "",
+                "path": "/t",
                 "component": "",
                 "subItem": [
                     {
                         "icon": "",
                         "name": "task",
                         "path": "/tasks",
-                        "component": <Task></Task>
+                        "subComponent": <Task></Task>
                     },
                     {
                         "icon": "",
                         "name": "task summary",
                         "path": "/tasksummary",
-                        "component": <Task></Task>
+                        "subComponent": <Task></Task>
                     }
                 ]
             }
@@ -101,19 +100,19 @@ const section = [
                         "icon": "",
                         "name": "profile",
                         "path": "/profile",
-                        "component": "component-profile"
+                        "subComponent": "component-profile"
                     },
                     {
                         "icon": "",
                         "name": "Edit-profile",
                         "path": "/Edit-profile",
-                        "component": "component-Edit-profile"
+                        "subComponent": "component-Edit-profile"
                     },
                     {
                         "icon": "icon-Email",
                         "name": "Email",
                         "path": "/Email",
-                        "component": "component-Email"
+                        "subComponent": "component-Email"
                     }
                 ]
             },
@@ -129,27 +128,27 @@ const section = [
                         "icon": "icon-float",
                         "name": "float",
                         "path": "/float",
-                        "component": "component-float"
+                        "subComponent": "component-float"
                     },
                     {
                         "icon": "icon-morris",
                         "name": "morris",
                         "path": "/morris",
-                        "component": "component-morris"
+                        "subComponent": "component-morris"
                     }
                 ]
             },
             {
                 "icon": "",
                 "name": "name",
-                "path": "/",
+                "path": "/name",
                 "component": "component-name",
                 "subItem": [
                     {
                         "icon": "",
-                        "name": "name",
-                        "path": "/",
-                        "component": "component-name"
+                        "name": "name1",
+                        "path": "/name1",
+                        "subComponent": "component-name"
                     }
                 ]
             }

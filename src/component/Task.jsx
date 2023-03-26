@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Task() {
+export const Task = () => {
   return (
     <>
       <h1>Task Component... Task Component... Task Component... Task Component...</h1>
