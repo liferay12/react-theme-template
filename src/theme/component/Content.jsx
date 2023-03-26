@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { Test } from "./Test";
 export const Content = (props) => {
     return (
         <>
@@ -18,7 +19,7 @@ export const Content = (props) => {
                                         <Route
                                             exact
                                             path={item.path}
-                                            element={item.component}
+                                            element={<Test></Test>}
                                         />
                                     )}
                                 </>

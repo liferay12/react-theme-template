@@ -27,7 +27,7 @@
                     "icon": "icon-name",
                     "name": "Employee",
                     "path": "/Employee",
-                    "component": "Employee",
+                    "component": "",
                     "subItem": []
                 },
                 {
