@@ -78,7 +78,7 @@ const section = [
                     {
                         "icon": "",
                         "name": "task summary",
-                        "path": "/task summary",
+                        "path": "/tasksummary",
                         "component": <Task></Task>
                     }
                 ]

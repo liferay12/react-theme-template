@@ -7,15 +7,20 @@ export const Content = (props) => {
                 <Routes>
                     {props.data.map((section) => (
                         <>
-                            {section.option.map((item) => (
+                            {section.option.map((item, i) => (
                                 <>
                                     {
                                         item.subItem.length != 0 ? (
-                                            <Route
-                                                exact
-                                                path={item.path}
-                                                element={item.component}
-                                            />
+                                            item.subItem.map((subItem, j) =>
+                                                <>
+
+                                                    <Route key={subItem.path}
+                                                        exact
+                                                        path={subItem.path}
+                                                        element={item.component}
+                                                    />
+                                                </>
+                                            )
                                         ) : (
 
                                             <Route
@@ -24,12 +29,7 @@ export const Content = (props) => {
                                                 element={item.component}
                                             />
 
-                                            // item.subItem.map((subItem) =>
-                                            //     <>
 
-                                            //         <h2>HEllollllllll</h2>
-                                            //     </>
-                                            // )
 
 
 

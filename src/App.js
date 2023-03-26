@@ -5,24 +5,13 @@ import ThemeRender from "./theme/component/ThemeRender";
 import themeData from "./theme/theme";
 import { useEffect } from "react";
 import { W3Crm } from "./theme/js/custom";
-import TopbarConfig from "./theme/TopbarConfig";
-// import {apexchart} from './theme/js';
+import { EmailService } from "./theme/Service/EmailService";
+
+
 
 function App() {
-  // useEffect(() => {
-  //   $('[data-bs-toggle="popover"]').popover();
-  //   // 'use strict';
-  //   W3Crm.init();
-  //   W3Crm.load();
-  //   setTimeout(function () {
-  //     W3Crm.handleMenuPosition();
-  //   }, 1000);
-  //   W3Crm.resize();
-  //   setTimeout(function () {
-  //     W3Crm.handleMenuPosition();
-  //   }, 1000);
-  // }, []);
-
+  EmailService.email = "ashwani@gmail.com";
+  EmailService.name = "Ashwani rao";
 
   return (
     <>

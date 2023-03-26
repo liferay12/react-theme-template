@@ -1,3 +1,6 @@
+import { EmailService } from "../Service/EmailService";
+
+
 export const Topbar = (props) => {
 
 	return (
@@ -51,8 +54,8 @@ export const Topbar = (props) => {
 													<img src="../images/1(1).jpg" alt="" />
 												</div>
 												<div className="header-info">
-													<h6>Thomas Fleming</h6>
-													<p>info@gmail.com</p>
+													<h6>{EmailService.name}</h6>
+													<p>{EmailService.email}</p>
 												</div>
 
 											</div>

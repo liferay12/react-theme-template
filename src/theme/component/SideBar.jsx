@@ -4,7 +4,7 @@ import { faCheckSquare, faCoffee } from '@fortawesome/fontawesome-free-solid'
 // import { faThumbsUp } from '@fortawesome/pro-regular-svg-icons';
 export const SideBar = (props) => {
 
-   
+
     return (
         <div className="deznav ">
             <div className="deznav-scroll mm-active">
@@ -31,22 +31,22 @@ export const SideBar = (props) => {
                                                             {
                                                                 item.subItem.map((subItem) =>
                                                                     <>
-
                                                                         <li className="mm-active"><a href={subItem.path} className="">{subItem.name}</a></li>
                                                                     </>
                                                                 )
                                                             }
                                                             {/* <li><a href={item.path}>Dashboard Dark</a></li> */}
                                                         </ul>
-                                                    </li>) :
-                                                    (<li><a href={item.path} className="" aria-expanded="false">
-                                                        <div className="menu-icon">
-                                                            
-                                                            {item.icon}
-                                                        </div>
-                                                        <span className="nav-text">{item.name}</span>
-                                                    </a>
-                                                    </li>)
+                                                    </li>
+                                                    ) :
+                                                    (
+                                                        <li><a href={item.path} className="" aria-expanded="false">
+                                                            <div className="menu-icon">
+                                                                {item.icon}
+                                                            </div>
+                                                            <span className="nav-text">{item.name}</span>
+                                                        </a>
+                                                        </li>)
 
                                             }
 
