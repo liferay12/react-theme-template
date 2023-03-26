@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+
 import { ChatBox } from "./ChatBox";
 import { SideBar } from "./SideBar";
 import { SideBarToggle } from "./SidebarToggle";
@@ -7,6 +7,7 @@ import { Test1 } from "./Test1";
 import { Topbar } from "./TopBar";
 import "font-awesome/css/font-awesome.min.css";
 import BreadCrumb from "./BreadCrumb";
+import { Content } from "./Content";
 
 const ThemeRender = (props) => {
   console.log("======" + props.data.section[0].title);
@@ -21,35 +22,7 @@ const ThemeRender = (props) => {
         <BreadCrumb></BreadCrumb>
         <div class="container-fluid">
           <div class="row">
-            <Router>
-              <Routes>
-                {props.data.section.map((section) => (
-                  <>
-                    {section.option.map((item) => (
-                      <>
-                        {item.subItem.length != 0 ? (
-                          <Route
-                            exact
-                            path={item.path}
-                            element={item.component}
-                          />
-                        ) : (
-                          <Route
-                            exact
-                            path={item.path}
-                            element={item.component}
-                          />
-                        )}
-                      </>
-                    ))}
-                  </>
-                ))}
-
-                {/* <Route exact path="/page1" element={<Test1></Test1>} />
-                    <Route exact path="/page2" element={<h1>Hello sgjhdjx fgvjshmdxkf,v</h1>} />
-                    <Route exact path="/page3" element={""} /> */}
-              </Routes>
-            </Router>
+            <Content data={props.data}></Content>
           </div>
         </div>
       </div>

@@ -6,8 +6,8 @@
                 {
                     "icon": "fas fa-heart",
                     "name": "Dashboad",
-                    "path": "/Dashboad",
-                    "component": "Dashboad",
+                    "path": "",
+                    "component": "<Test />",
                     "subItem": [
                         {
                             "icon": "icon-name",
@@ -43,6 +43,26 @@
                     "path": "/Finance",
                     "component": "Finance",
                     "subItem": []
+                },
+                {
+                    "icon": "tasks",
+                    "name": "tasks",
+                    "path": "",
+                    "component": "",
+                    "subItem": [
+                        {
+                            "icon": "task",
+                            "name": "task",
+                            "path": "/tasks",
+                            "component": "tasks"
+                        },
+                        {
+                            "icon": "task summary",
+                            "name": "task summary",
+                            "path": "/task summary",
+                            "component": "task summary"
+                        }
+                    ]
                 }
             ]
         },
@@ -50,65 +70,48 @@
             "title": "OUR FEACTURE",
             "option": [
                 {
-                    "icon": "icon-name",
-                    "name": "name",
-                    "path": "/",
-                    "component": "component-name",
-                    "subItem": []
-                },
-                {
-                    "icon": "icon-name",
-                    "name": "name",
-                    "path": "/",
-                    "component": "component-name",
-                    "subItem": []
-                },
-                {
-                    "icon": "icon-name",
-                    "name": "name",
-                    "path": "/",
-                    "component": "component-name",
+                    "icon": "icon-App",
+                    "name": "App",
+                    "path": "",
+                    "component": "",
                     "subItem": [
                         {
-                            "icon": "icon-name",
-                            "name": "name",
-                            "path": "/",
-                            "component": "component-name"
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "section2": [
-        {
-            "title": "YOUR COMPANY",
-            "option": [
-                {
-                    "icon": "icon-name",
-                    "name": "",
-                    "path": "/",
-                    "component": "component-name",
-                    "subItem": [
+                            "icon": "icon-profile",
+                            "name": "profile",
+                            "path": "/profile",
+                            "component": "component-profile"
+                        },
                         {
-                            "icon": "icon-name",
-                            "name": "name",
-                            "path": "/",
-                            "component": "component-name"
+                            "icon": "icon-Edit-profile",
+                            "name": "Edit-profile",
+                            "path": "/Edit-profile",
+                            "component": "component-Edit-profile"
+                        },
+                        {
+                            "icon": "icon-Email",
+                            "name": "Email",
+                            "path": "/Email",
+                            "component": "component-Email"
                         }
                     ]
                 },
                 {
-                    "icon": "icon-name",
-                    "name": "name",
-                    "path": "/",
-                    "component": "component-name",
+                    "icon": "icon-charts",
+                    "name": "charts",
+                    "path": "",
+                    "component": "",
                     "subItem": [
                         {
-                            "icon": "icon-name",
-                            "name": "name",
-                            "path": "/",
-                            "component": "component-name"
+                            "icon": "icon-float",
+                            "name": "float",
+                            "path": "/float",
+                            "component": "component-float"
+                        },
+                        {
+                            "icon": "icon-morris",
+                            "name": "morris",
+                            "path": "/morris",
+                            "component": "component-morris"
                         }
                     ]
                 },
