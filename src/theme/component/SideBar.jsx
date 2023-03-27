@@ -68,13 +68,11 @@ export const SideBar = (props) => {
     return (
         <div className="deznav ">
             <div className="deznav-scroll mm-active">
-                <ul className="metismenu mm-show" id="menu" >
+                <ul className="metismenu mm-show" >
                     {
                         props.themeData.map((section, i) =>
                             <>
                                 <li className="menu-title" >{section.title}</li>
-
-
                                 {
                                     section.option.map((item, j) =>
                                         <>
@@ -82,7 +80,7 @@ export const SideBar = (props) => {
                                                 item.subItem.length != 0 ?
                                                     (
                                                         <li className="">
-                                                            <a className="has-arrow " id="item" onClick={handleMenuPosition}  href="javascript:void(0);" aria-expanded="false" >
+                                                            <a className="has-arrow " onClick={handleMenuPosition}  href="javascript:void(0);" aria-expanded="false" >
                                                                 <div className="menu-icon">
                                                                     {item.icon}
                                                                 </div>
