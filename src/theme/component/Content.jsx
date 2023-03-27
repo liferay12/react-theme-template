@@ -18,9 +18,10 @@ export const Content = (props) => {
                                                         exact
                                                         path={subItem.path}
                                                         element={subItem.subComponent}
+
                                                     />
                                                     {
-                                                        console.log(subItem.path+" : "+subItem.subComponent)
+                                                        console.log(subItem.path + " : " + subItem.subComponent)
                                                     }
                                                 </>
                                             )
@@ -30,6 +31,7 @@ export const Content = (props) => {
                                                 exact
                                                 path={item.path}
                                                 element={item.component}
+
                                             />
 
 
