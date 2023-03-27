@@ -20,7 +20,7 @@ export const SideBar = (props) => {
                                         <>
                                             {
                                                 item.subItem.length != 0 ?
-                                                    (<li className="mm-active">
+                                                    (<li className="">
                                                         <a className="has-arrow " href=" " aria-expanded="false">
                                                             <div className="menu-icon">
                                                                 {item.icon}
@@ -47,7 +47,8 @@ export const SideBar = (props) => {
                                                             </div>
                                                             <span className="nav-text">{item.name}</span>
                                                         </a>
-                                                        </li>)
+                                                        </li>
+                                                    )
 
                                             }
 
