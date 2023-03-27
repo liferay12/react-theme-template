@@ -397,44 +397,45 @@ export var W3Crm = ()=>{
 		}
 	}
 	
-	var handleDraggableCard = function() {
-		var dzCardDraggable = function () {
-		 return {
-		  //main function to initiate the module
-		  init: function () {
-		   var containers = document.querySelectorAll('.draggable-zone');
+	// var handleDraggableCard = function() {
 
-		   if (containers.length === 0) {
-			return false;
-		   }
+	// 	var dzCardDraggable = function () {
+	// 	 return {
+	// 	  //main function to initiate the module
+	// 	  init: function () {
+	// 	   var containers = document.querySelectorAll('.draggable-zone');
 
-		//    var swappable = new Sortable.default(containers, {
-		// 	draggable: '.draggable',
-		// 	handle: '.draggable.draggable-handle',
-		// 	mirror: {
-		// 	 appendTo: 'body',
-		// 	 constrainDimensions: true
-		// 	}
+	// 	   if (containers.length === 0) {
+	// 		return false;
+	// 	   }
+
+	// 	//    var swappable = new Sortable.default(containers, {
+	// 	// 	draggable: '.draggable',
+	// 	// 	handle: '.draggable.draggable-handle',
+	// 	// 	mirror: {
+	// 	// 	 appendTo: 'body',
+	// 	// 	 constrainDimensions: true
+	// 	// 	}
 			
-		//    });
-		// 
-		  }
-		 };
-		}();
+	// 	//    });
+	// 	// 
+	// 	  }
+	// 	 };
+	// 	}();
 
-		$(document).ready(function () {
-		 dzCardDraggable.init();
-		});
+	// 	$(document).ready(function () {
+	// 	 dzCardDraggable.init();
+	// 	});
 		
 		
-		function setBoxCount(){
-			var cardCount = 0;
-			$('.dropzoneContainer').each(function(){
-				cardCount = $(this).find('.draggable-handle').length;
-				$(this).find('.totalCount').html(cardCount);
-			});
-		}
-	}
+	// 	function setBoxCount(){
+	// 		var cardCount = 0;
+	// 		$('.dropzoneContainer').each(function(){
+	// 			cardCount = $(this).find('.draggable-handle').length;
+	// 			$(this).find('.totalCount').html(cardCount);
+	// 		});
+	// 	}
+	// }
 
 	// loader 
 		

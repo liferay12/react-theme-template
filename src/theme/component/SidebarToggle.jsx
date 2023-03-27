@@ -2,11 +2,9 @@ import $ from "jquery";
 export const SideBarToggle = () => {
 
     var handleNavigation = function () {
-       
+        $('#main-wrapper').toggleClass("menu-toggle");
 
-            $('#main-wrapper').toggleClass("menu-toggle");
-
-            $(".hamburger").toggleClass("is-active");
+        $(".hamburger").toggleClass("is-active");
       
     }
 
