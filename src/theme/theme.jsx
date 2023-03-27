@@ -2,7 +2,7 @@ import { Finance } from "../component/Finance";
 import { Test } from "../component/Test";
 import { Test1 } from "../component/Test1";
 import { Task } from "../component/Task";
-import { Login } from "./component/Login";
+import { Login } from "../component/Login";
 
 const section = [
     {
@@ -136,20 +136,6 @@ const section = [
                         "name": "morris",
                         "path": "/morris",
                         "subComponent": "component-morris"
-                    }
-                ]
-            },
-            {
-                "icon": "",
-                "name": "name",
-                "path": "/name",
-                "component": "component-name",
-                "subItem": [
-                    {
-                        "icon": "",
-                        "name": "name1",
-                        "path": "/name1",
-                        "subComponent": "component-name"
                     }
                 ]
             }

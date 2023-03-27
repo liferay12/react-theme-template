@@ -1,13 +1,13 @@
-import $ from "jquery"
+import $ from "jquery";
 export const SideBarToggle = () => {
 
     var handleNavigation = function () {
-        $(".nav-control").on('click', function () {
+       
 
             $('#main-wrapper').toggleClass("menu-toggle");
 
             $(".hamburger").toggleClass("is-active");
-        });
+      
     }
 
     return (
