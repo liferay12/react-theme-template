@@ -1,72 +1,96 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faCoffee } from '@fortawesome/fontawesome-free-solid'
-// import { faThumbsUp } from '@fortawesome/pro-regular-svg-icons';
 import $ from "jquery";
-// import {useWindowDimensions} from 'react-native';
-
+import { useEffect, useState, useRef } from "react";
 
 
 export const SideBar = (props) => {
 
-    // var screenWidth = $( window ).width();
-    // var handleDropdown = function () {
-    //     $('#main-wrapper').toggleClass("menu-toggle");
+    const windowWidth = useRef(window.innerWidth);
 
-    //     $(".mm-collapse").toggleClass("is-active");
-      
-    // }
-
-    // var handleMetisMenu = function() {
-	// 	if($('#menu').length > 0 ){
-	// 		$("#menu").metisMenu();
-	// 	}
-	// 	$('.metismenu > .mm-active ').each(function(){
-	// 		if(!$(this).children('ul').length > 0)
-	// 		{
-	// 			$(this).addClass('active-no-child');
-	// 		}
-	// 	});
-	// }
-
-    var handleMenuPosition = function(){
-        
-            $("#submenu li").toggle();
-        
-    }; 
+    let [width, setWidth] = useState(windowWidth.current);
+    var handleMenuPosition = function (value) {
+        console.log("value", value)
+        $("#" + value).toggle();
 
 
-    // var handleMenuPosition = function(){
-		
-	// 	if(screenWidth > 1024){
-	// 		$(".metismenu  li").unbind().each(function (e) {
-	// 			if ($('ul', this).length > 0) {
-	// 				var elm = $('ul:first', this).css('display','block');
-	// 				var off = elm.offset();
-	// 				var l = off.left;
-	// 				var w = elm.width();
-	// 				elm = $('ul:first', this).removeAttr('style');
-	// 				//var docH = $("body").height();
-	// 				var docW = $("body").width();
-					
-	// 				if($('html').hasClass('rtl')){
-	// 					var isEntirelyVisible = (l + w <= docW);	
-	// 				}else{
-	// 					isEntirelyVisible = (l > 0)?true:false;	
-	// 				}
-						
-	// 				if (!isEntirelyVisible) {
-	// 					$(this).find('ul:first').addClass('left');
-	// 				} else {
-	// 					$(this).find('ul:first').removeClass('left');
-	// 				}
-	// 			}
-	// 		});
-	// 	}
-	// }
+    };
+
+
+
+    useEffect(() => {
+        const resizeListener = () => {
+            // change width from the state object
+            setWidth(window.innerWidth.current)
+            console.log("change width from the state object" + width);
+            console.log("current width : " + window.innerWidth.current)
+            let screenWidth = width;
+
+            if (width <= 991) {
+
+                if ($(this).hasClass('open')) {
+                    $(this).removeClass('open');
+                    $('.fixed-content-box').removeClass('active');
+                    $('.hamburger').show();
+                } else {
+                    $('.menu-tabs .nav-link').removeClass('open');
+                    $(this).addClass('open');
+                    $('.fixed-content-box').addClass('active');
+                    $('.hamburger').hide();
+                }
+                //$('.fixed-content-box').toggleClass('active');
+
+
+                $('.fixed-content-box').removeClass('active');
+                $('.hamburger').removeClass('is-active');
+                $('#main-wrapper').removeClass('menu-toggle');
+                $('.hamburger').show();
+
+            }
+
+
+        };
+        // set resize listener
+        window.addEventListener('resize', resizeListener);
+        console.log("change width " + width);
+        // clean up function
+        console.log("current width : " + window.innerWidth)
+        let screenWidth = width;
+
+        if (width <= 991) {
+
+            if ($(this).hasClass('open')) {
+                $(this).removeClass('open');
+                $('.fixed-content-box').removeClass('active');
+                $('.hamburger').show();
+            } else {
+                $('.menu-tabs .nav-link').removeClass('open');
+                $(this).addClass('open');
+                $('.fixed-content-box').addClass('active');
+                $('.hamburger').hide();
+            }
+            //$('.fixed-content-box').toggleClass('active');
+
+
+            $('.fixed-content-box').removeClass('active');
+            $('.hamburger').removeClass('is-active');
+            $('#main-wrapper').removeClass('menu-toggle');
+            $('.hamburger').show();
+
+        }
+        return () => {
+            // remove resize listener
+            window.removeEventListener('resize', resizeListener);
+        }
+    }, [])
+
+
+
 
     return (
         <div className="deznav ">
+
             <div className="deznav-scroll mm-active">
                 <ul className="metismenu mm-show" id="menu" >
                     {
@@ -81,14 +105,16 @@ export const SideBar = (props) => {
                                             {
                                                 item.subItem.length != 0 ?
                                                     (
+
                                                         <li className="">
-                                                            <a className="has-arrow " id="item" onClick={handleMenuPosition}  href="javascript:void(0);" aria-expanded="false" >
+                                                            <a className="has-arrow " id="item" onClick={() => handleMenuPosition(item.name)} href="#" aria-expanded="false" >
                                                                 <div className="menu-icon">
                                                                     {item.icon}
                                                                 </div>
                                                                 <span className="nav-text">{item.name}</span>
                                                             </a>
-                                                            <ul aria-expanded="false" id="submenu"  className="left " Style="">
+                                                            {console.log(j)}
+                                                            <ul aria-expanded="false" id={item.name} className="left " Style="display: none;">
                                                                 {
                                                                     item.subItem.map((subItem) =>
                                                                         <>
