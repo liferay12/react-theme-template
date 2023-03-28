@@ -92,13 +92,11 @@ export const SideBar = (props) => {
         <div className="deznav ">
 
             <div className="deznav-scroll mm-active">
-                <ul className="metismenu mm-show" id="menu" >
+                <ul className="metismenu mm-show" >
                     {
                         props.themeData.map((section, i) =>
                             <>
                                 <li className="menu-title" >{section.title}</li>
-
-
                                 {
                                     section.option.map((item, j) =>
                                         <>
