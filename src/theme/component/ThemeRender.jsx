@@ -13,6 +13,8 @@ const ThemeRender = (props) => {
 
   const [themeMode, setThemeMode] = useState("light");
 
+  const [f, setF] = useState("Dashboard");
+  const [s, setS] = useState("dashboard");
   var handleConverterTheme = function (mode) {
 
     if (mode === "light") {
@@ -47,7 +49,7 @@ const ThemeRender = (props) => {
         <SideBar themeData={props.data} themeModeFun={handleConverterTheme}></SideBar>
 
         <div class="content-body" style={{ minHeight: "939px" }}>
-          <BreadCrumb onClick={handleConverterTheme}></BreadCrumb>
+          <BreadCrumb first={f} second={s}></BreadCrumb>
           <div class="container-fluid">
             <div class="row">
               <Content data={props.data}></Content>

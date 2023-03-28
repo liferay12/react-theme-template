@@ -30,7 +30,7 @@ export const Topbar = (props) => {
 											{
 												item.type === "icon" ? (
 													<li className="nav-item dropdown notification_dropdown">
-														<a className="nav-link " href={item.path} data-bs-toggle="dropdown">
+														<a className="nav-link " href={item.path} >
 															{item.name}
 
 														</a>
@@ -123,11 +123,67 @@ export const Topbar = (props) => {
 
 									</div>
 								</li>
+								<div className="dropdown-menu dropdown-menu-end" >
+									<div id="DZ_W_TimeLine02" className="widget-timeline dz-scroll style-1 p-3 height370" >
+										<ul className="timeline" >
+											<li>
+												<div class="timeline-badge primary"></div>
+												<a class="timeline-panel text-muted" href="javascript:void(0);">
+													<span>10 minutes ago</span>
+													<h6 class="mb-0">Youtube, a video-sharing website, goes live <strong class="text-primary">$500</strong>.</h6>
+												</a>
+											</li>
+											<li>
+												<div class="timeline-badge info">
+												</div>
+												<a class="timeline-panel text-muted" href="javascript:void(0);">
+													<span>20 minutes ago</span>
+													<h6 class="mb-0">New order placed <strong class="text-info">#XF-2356.</strong></h6>
+													<p class="mb-0">Quisque a consequat ante Sit amet magna at volutapt...</p>
+												</a>
+											</li>
+											<li>
+												<div class="timeline-badge danger">
+												</div>
+												<a class="timeline-panel text-muted" href="javascript:void(0);">
+													<span>30 minutes ago</span>
+													<h6 class="mb-0">john just buy your product <strong class="text-warning">Sell $250</strong></h6>
+												</a>
+											</li>
+											<li>
+												<div class="timeline-badge success">
+												</div>
+												<a class="timeline-panel text-muted" href="javascript:void(0);">
+													<span>15 minutes ago</span>
+													<h6 class="mb-0">StumbleUpon is acquired by eBay. </h6>
+												</a>
+											</li>
+											<li>
+												<div class="timeline-badge warning">
+												</div>
+												<a class="timeline-panel text-muted" href="javascript:void(0);">
+													<span>20 minutes ago</span>
+													<h6 class="mb-0">Mashable, a news website and blog, goes live.</h6>
+												</a>
+											</li>
+											<li>
+												<div class="timeline-badge dark">
+												</div>
+												<a class="timeline-panel text-muted" href="javascript:void(0);">
+													<span>20 minutes ago</span>
+													<h6 class="mb-0">Mashable, a news website and blog, goes live.</h6>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</ul>
-						</div>
-					</nav>
-				</div>
-			</div>
+
+						</div >
+
+					</nav >
+				</div >
+			</div >
 		</>
 	);
 }

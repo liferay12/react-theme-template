@@ -13,12 +13,7 @@ export const SideBar = (props) => {
     var handleMenuPosition = function (value) {
         console.log("value", value)
         $("#" + value).toggle();
-
-
     };
-
-
-
     useEffect(() => {
         const resizeListener = () => {
             // change width from the state object
@@ -32,8 +27,6 @@ export const SideBar = (props) => {
 
                 $(".hamburger").toggleClass("is-active");
             }
-
-
         };
         // set resize listener
         window.addEventListener('resize', resizeListener);

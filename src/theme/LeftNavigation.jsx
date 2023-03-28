@@ -26,7 +26,7 @@ const section = [
         component: "",
         subItem: [
           {
-           
+
             icon: "",
             name: "Dashboard-light",
             path: "/light",
