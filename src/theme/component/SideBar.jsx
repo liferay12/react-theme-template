@@ -85,8 +85,12 @@ export const SideBar = (props) => {
                                                                 {
                                                                     item.subItem.map((subItem) =>
                                                                         <>
+                                                                            {
+                                                                                (subItem.path === "/light") ? <li className=""><a href='#' className="" onClick={() => { props.themeModeFun("light") }} >{subItem.name}</a></li>
+                                                                                    : subItem.path === "/dark" ? <li className=""><a href='#' className="" onClick={() => { props.themeModeFun("dark") }} >{subItem.name}</a></li>
+                                                                                        : <li className=""><a href={subItem.path} className="" >{subItem.name}</a></li>
+                                                                            }
 
-                                                                            <li className=""><a href={subItem.path} className="" >{subItem.name}</a></li>
                                                                         </>
                                                                     )
                                                                 }

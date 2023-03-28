@@ -11,15 +11,15 @@ import $ from "jquery"
 import { useState } from "react";
 const ThemeRender = (props) => {
 
-  const [theme, setTheme] = useState("light");
+  const [themeMode, setThemeMode] = useState("light");
 
-  var handleConverterTheme = function () {
+  var handleConverterTheme = function (mode) {
 
-    if (theme === "light") {
-      setTheme("light");
+    if (mode === "light") {
+      setThemeMode("light");
     }
-    if (theme === "dark") {
-      setTheme("dark");
+    if (mode === "dark") {
+      setThemeMode("dark");
     }
 
   }
@@ -27,7 +27,7 @@ const ThemeRender = (props) => {
   return (
     <body
       data-typography="poppins"
-      data-theme-version={theme}
+      data-theme-version={themeMode}
       data-layout="vertical"
       data-nav-headerbg="color_4"
       data-headerbg="color_4"
@@ -44,7 +44,7 @@ const ThemeRender = (props) => {
         <SideBarToggle></SideBarToggle>
         <ChatBox></ChatBox>
         <Topbar data={TopbarConfig}></Topbar>
-        <SideBar themeData={props.data}></SideBar>
+        <SideBar themeData={props.data} themeModeFun={handleConverterTheme}></SideBar>
 
         <div class="content-body" style={{ minHeight: "939px" }}>
           <BreadCrumb onClick={handleConverterTheme}></BreadCrumb>

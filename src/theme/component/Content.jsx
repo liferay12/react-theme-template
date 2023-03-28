@@ -1,6 +1,13 @@
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 export const Content = (props) => {
+
+
+    var handleConverterTheme = function () {
+
+        alert("-1-");
+    }
+
     return (
         <>
             <Router>

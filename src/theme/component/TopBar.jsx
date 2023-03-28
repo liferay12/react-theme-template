@@ -52,7 +52,7 @@ export const Topbar = (props) => {
 										<a className="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 											<div className="header-info2 d-flex align-items-center">
 												<div className="header-media">
-													<img src="../images/1(1).jpg" alt="" />
+													<img src={pro} alt="" />
 												</div>
 												<div className="header-info">
 													<h6>{EmailService.name}</h6>
@@ -67,7 +67,7 @@ export const Topbar = (props) => {
 													<div className="products">
 														<img src={pro} className="avatar avatar-md" alt="" />
 														<div>
-															<h6>Thomas Fleming</h6>
+															<h6>{EmailService.name}</h6>
 															<span>Web Designer</span>
 														</div>
 													</div>
