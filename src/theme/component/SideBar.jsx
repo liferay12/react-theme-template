@@ -28,29 +28,9 @@ export const SideBar = (props) => {
             let screenWidth = width;
 
             if (width > 1024) {
-                $(".metismenu  li").unbind().each(function (e) {
-                    if ($('ul', this).length > 0) {
-                        var elm = $('ul:first', this).css('display', 'block');
-                        var off = elm.offset();
-                        var l = off.left;
-                        var w = elm.width();
-                        elm = $('ul:first', this).removeAttr('style');
-                        //var docH = $("body").height();
-                        var docW = $("body").width();
+                $('#main-wrapper').toggleClass("menu-toggle");
 
-                        if ($('html').hasClass('rtl')) {
-                            var isEntirelyVisible = (l + w <= docW);
-                        } else {
-                            isEntirelyVisible = (l > 0) ? true : false;
-                        }
-
-                        if (!isEntirelyVisible) {
-                            $(this).find('ul:first').addClass('left');
-                        } else {
-                            $(this).find('ul:first').removeClass('left');
-                        }
-                    }
-                });
+                $(".hamburger").toggleClass("is-active");
             }
 
 
@@ -63,28 +43,11 @@ export const SideBar = (props) => {
         console.log("current width : " + window.innerWidth)
         let screenWidth = width;
 
-        if(screenWidth <= 991 ){
-			$('.menu-tabs .nav-link').on('click',function(){
-				if($(this).hasClass('open'))
-				{
-					$(this).removeClass('open');
-					$('.fixed-content-box').removeClass('active');
-					$('.hamburger').show();
-				}else{
-					$('.menu-tabs .nav-link').removeClass('open');
-					$(this).addClass('open');
-					$('.fixed-content-box').addClass('active');
-					$('.hamburger').hide();
-				}
-				//$('.fixed-content-box').toggleClass('active');
-			});
-			$('.close-fixed-content').on('click',function(){
-				$('.fixed-content-box').removeClass('active');
-				$('.hamburger').removeClass('is-active');
-				$('#main-wrapper').removeClass('menu-toggle');
-				$('.hamburger').show();
-			});
-		}
+        if (screenWidth <= 991) {
+            $('#main-wrapper').toggleClass("menu-toggle");
+
+            $(".hamburger").toggleClass("is-active");
+        }
         return () => {
             // remove resize listener
             window.removeEventListener('resize', resizeListener);
