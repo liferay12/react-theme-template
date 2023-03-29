@@ -2,7 +2,7 @@ import { Login } from "../component/Login";
 
 const TopbarConfig = [
   {
-    type: "icon",
+    type: "setting",
     name: (
       <svg
         width="24"
@@ -33,7 +33,7 @@ const TopbarConfig = [
     component: "",
   },
   {
-    type: "icon",
+    type: "notification",
     name: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const TopbarConfig = [
     component: "",
   },
   {
-    type: "icon",
+    type: "message",
     name: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
