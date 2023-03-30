@@ -55,20 +55,30 @@ export const Topbar = (props) => {
 											else if(item.type === "message"){
 												return(
 												<li className="nav-item notification_dropdown" >
-													<a className="nav-link bell-link" href={item.path} data-bs-toggle="dropdown" data-target="#message">
+													<a className="nav-link " href={item.path} data-bs-toggle="dropdown" data-target="#message">
 														{item.name}
 														<ChatBox></ChatBox> 
 													</a>
 												</li>)
 											}
-											else if(item.type === "button"){
+											// else if(item.type === "button"){
+											// 	return(
+											// 		<li className="nav-item align-items-center header-border">
+											// 			<a href={item.path} className="btn btn-primary btn-sm">
+											// 				{item.name}
+											// 			</a>
+											// 		</li>
+
+											// 	)
+											// }
+											else {
 												return(
-													<li className="nav-item align-items-center header-border">
-														<a href={item.path} className="btn btn-primary btn-sm">
+													<li className="nav-item notification_dropdown" >
+														<a className="nav-link" href={item.path} >
 															{item.name}
+															
 														</a>
 													</li>
-
 												)
 											}
 										}
