@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes  } from "react-router-dom";
 
 export const Content = (props) => {
 
@@ -6,11 +6,14 @@ export const Content = (props) => {
     var handleConverterTheme = function () {
 
         alert("-1-");
-    }
+
+    
+      }
 
     return (
         <>
-            <Router>
+            {/* <Router> */}
+               
                 <Routes>
                     {props.data.map((section) => (
                         <>
@@ -56,7 +59,7 @@ export const Content = (props) => {
                     <Route exact path="/page2" element={<h1>Hello sgjhdjx fgvjshmdxkf,v</h1>} />
                     <Route exact path="/page3" element={""} /> */}
                 </Routes>
-            </Router>
+            {/* </Router> */}
         </>
     );
 }
