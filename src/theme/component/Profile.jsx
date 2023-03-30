@@ -1,5 +1,5 @@
-import { EmailService } from "../theme/Service/EmailService";
-import pro from "../theme/images/1.jpg"
+import { EmailService } from "../Service/EmailService";
+import pro from "../images/1.jpg"
 export const Profile = ()=> {
     return(
         <>
@@ -24,7 +24,7 @@ export const Profile = ()=> {
                                     <img src={pro} className="avatar avatar-md" alt="" />
                                     <div>
                                         <h6>{EmailService.name}</h6>
-                                        <span>Web Designer</span>
+                                        <span>{EmailService.designation}</span>
                                     </div>
                                 </div>
                             </div>

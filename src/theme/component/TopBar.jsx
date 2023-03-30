@@ -1,11 +1,15 @@
 import { EmailService } from "../Service/EmailService";
-import { Login } from "../../component/Login";
+import { Login } from "./Login";
 import pro from "../images/1.jpg"
-import { Profile } from "../../component/Profile";
-import { Setting } from "../../component/Setting";
-import { Notification } from "../../component/Notification";
+import { Profile } from "./Profile";
+import { Setting } from "./Setting";
+import { Notification } from "./Notification";
+import { ChatBox } from "./ChatBox";
+import { useState } from "react";
+
 
 export const Topbar = (props) => {
+// const [chabox, setChabox]=useState(false);
 
 	return (
 		<>
@@ -31,8 +35,8 @@ export const Topbar = (props) => {
 										{
 											if(item.type === "setting"){
 												return(
-												<li className="nav-item notification_dropdown" data-bs-toggle="dropdown" data-target="#setting">
-													<a className="nav-link " href={item.path} >
+												<li className="nav-item notification_dropdown" >
+													<a className="nav-link " href={item.path} data-bs-toggle="dropdown" data-target="#setting">
 														{item.name}
 														<Setting></Setting>
 													</a>
@@ -50,10 +54,10 @@ export const Topbar = (props) => {
 											}
 											else if(item.type === "message"){
 												return(
-												<li className="nav-item dropdown message_dropdown" >
-													<a className="nav-link " href={item.path} >
+												<li className="nav-item notification_dropdown" >
+													<a className="nav-link bell-link" href={item.path} data-bs-toggle="dropdown" data-target="#message">
 														{item.name}
-														
+														<ChatBox></ChatBox> 
 													</a>
 												</li>)
 											}
@@ -87,7 +91,8 @@ export const Topbar = (props) => {
 								<Profile></Profile>
 
 								{/* For Profile In header end */}
-
+								
+								
 								
 							</ul>
 
@@ -96,6 +101,7 @@ export const Topbar = (props) => {
 					</nav >
 				</div >
 			</div >
+			
 		</>
 	);
 }

@@ -46,7 +46,7 @@ const ThemeRender = (props) => {
       data-primary="color_1"
       data-secondary="color_1"
     >
-        <Router>
+    <Router>
       <div id="main-wrapper" class="show">
         <SideBarToggle></SideBarToggle>
         <ChatBox></ChatBox>

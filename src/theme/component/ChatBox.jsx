@@ -1,7 +1,7 @@
 export const ChatBox = () => {
     return(
         <>
-            <div className="chatbox">
+            <div className="chatbox dropdown-menu dropdown-menu-end" id="message">
 			<div className="chatbox-close"></div>
 			<div className="custom-tab-1">
 				<h4 className="heading ps-3 pt-2">Messages</h4>
@@ -33,7 +33,7 @@ export const ChatBox = () => {
 									<li className="active dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/1.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/1.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon"></span>
 											</div>
 											<div className="user_info">
@@ -45,7 +45,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/2.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/2.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon offline"></span>
 											</div>
 											<div className="user_info">
@@ -57,7 +57,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/3.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/3.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon"></span>
 											</div>
 											<div className="user_info">
@@ -69,7 +69,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/4.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/4.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon offline"></span>
 											</div>
 											<div className="user_info">
@@ -82,7 +82,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/5.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/5.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon offline"></span>
 											</div>
 											<div className="user_info">
@@ -94,7 +94,7 @@ export const ChatBox = () => {
 									<li className="dz- -user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/1.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/1.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon"></span>
 											</div>
 											<div className="user_info">
@@ -106,7 +106,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/2.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/2.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon offline"></span>
 											</div>
 											<div className="user_info">
@@ -119,7 +119,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/3.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/3.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon"></span>
 											</div>
 											<div className="user_info">
@@ -131,7 +131,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/4.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/4.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon offline"></span>
 											</div>
 											<div className="user_info">
@@ -144,7 +144,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/5.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/5.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon offline"></span>
 											</div>
 											<div className="user_info">
@@ -156,7 +156,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/1.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/1.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon"></span>
 											</div>
 											<div className="user_info">
@@ -168,7 +168,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/2.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/2.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon offline"></span>
 											</div>
 											<div className="user_info">
@@ -180,7 +180,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/3.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/3.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon"></span>
 											</div>
 											<div className="user_info">
@@ -193,7 +193,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/4.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/4.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon offline"></span>
 											</div>
 											<div className="user_info">
@@ -205,7 +205,7 @@ export const ChatBox = () => {
 									<li className="dz-chat-user">
 										<div className="d-flex bd-highlight">
 											<div className="img_cont">
-												<img src="../images/5.jpg" className="rounded-circle user_img" alt=""/>
+												<img src={require("../images/5.jpg")} className="rounded-circle user_img" alt=""/>
 												<span className="online_icon offline"></span>
 											</div>
 											<div className="user_info">
@@ -252,12 +252,12 @@ export const ChatBox = () => {
 										<span className="msg_time_send">8:55 AM, Today</span>
 									</div>
 									<div className="img_cont_msg">
-								<img src="../images/2.jpg" className="rounded-circle user_img_msg" alt=""/>
+								<img src={require("../images/2.jpg")} className="rounded-circle user_img_msg" alt=""/>
 									</div>
 								</div>
 								<div className="d-flex justify-content-start mb-4">
 									<div className="img_cont_msg">
-										<img src="../images/1.jpg" className="rounded-circle user_img_msg" alt=""/>
+										<img src={require("../images/1.jpg")} className="rounded-circle user_img_msg" alt=""/>
 									</div>
 									<div className="msg_cotainer">
 										I am good too, thank you for your chat template

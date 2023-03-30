@@ -1,4 +1,5 @@
 export const EmailService = {
     name:"",
-    email:""
+    email:"",
+    designation:""
 }
