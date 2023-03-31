@@ -4,6 +4,7 @@ import { Test1 } from "../component/Test1";
 import { Task } from "../component/Task";
 import { Login } from "./component/Login";
 import { ChatBox } from "./component/ChatBox";
+import Planets from "./component/Planents";
 
 const section = [
   {
@@ -139,7 +140,7 @@ const section = [
             icon: "",
             name: "task",
             path: "/tasks",
-            subComponent: <Task></Task>,
+            subComponent: <Planets></Planets>,
           },
           {
             icon: "",
