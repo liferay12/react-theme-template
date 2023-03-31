@@ -9,8 +9,7 @@ import { Content } from "./Content";
 import TopbarConfig from "../TopbarConfig";
 import $ from "jquery"
 import { useState } from "react";
-
-import { BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 const ThemeRender = (props) => {
 
   // console.log("---------------- : " + useLocation())
@@ -46,12 +45,12 @@ const ThemeRender = (props) => {
       data-primary="color_1"
       data-secondary="color_1"
     >
-    <Router>
-      <div id="main-wrapper" class="show">
-        <SideBarToggle></SideBarToggle>
-        <ChatBox></ChatBox>
-        <Topbar data={TopbarConfig}></Topbar>
-        <SideBar themeData={props.data} themeModeFun={handleConverterTheme}></SideBar>
+      <Router>
+        <div id="main-wrapper" class="show">
+          <SideBarToggle></SideBarToggle>
+          <ChatBox></ChatBox>
+          <Topbar data={TopbarConfig}></Topbar>
+          <SideBar themeData={props.data} themeModeFun={handleConverterTheme}></SideBar>
           <div class="content-body" style={{ minHeight: "939px" }}>
             <BreadCrumb ></BreadCrumb>
             <div class="container-fluid">
@@ -62,8 +61,8 @@ const ThemeRender = (props) => {
               </div>
             </div>
           </div>
-      </div>
-        </Router>
+        </div>
+      </Router>
     </body>
   );
 };

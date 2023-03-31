@@ -1,0 +1,156 @@
+{
+    "id": "",
+    "title": "User Registration",
+    "subTitle": "",
+    "fields": [
+        {
+            "type": "text",
+            "id": "firstName",
+            "name": "firstName",
+            "label": "First Name",
+            "classes": "col-md-6 form-control",
+            "placeholder": "Enter your first name",
+            "suggestion": "",
+            "config": {
+                "disabled": false,
+                "readOnly": false,
+                "checked": false,
+                "hidden": false
+            },
+            "options": [],
+            "value": "",
+            "htmlElement": "text",
+            "errorMessage": "",
+            "valid": false,
+            "validation": {
+                "required": true,
+                "maxLength": "",
+                "minLength": ""
+            }
+        },
+        {
+            "type": "text",
+            "id": "lastName",
+            "name": "lastName",
+            "label": "Last Name",
+            "classes": "col-md-6 form-control",
+            "placeholder": "Enter your last name",
+            "suggestion": "",
+            "config": {
+                "disabled": false,
+                "readOnly": false,
+                "checked": false,
+                "hidden": false
+            },
+            "options": [],
+            "value": "",
+            "htmlElement": "text",
+            "errorMessage": "",
+            "valid": false,
+            "validation": {
+                "required": true,
+                "maxLength": "",
+                "minLength": ""
+            }
+        },
+        {
+            "type": "text",
+            "id": "userName",
+            "name": "nauserNameme",
+            "label": "user Name",
+            "classes": "col-md-6 form-control",
+            "placeholder": "Enter your user name",
+            "suggestion": "",
+            "config": {
+                "disabled": false,
+                "readOnly": false,
+                "checked": false,
+                "hidden": false
+            },
+            "options": [],
+            "value": "",
+            "htmlElement": "text",
+            "errorMessage": "",
+            "valid": false,
+            "validation": {
+                "required": true,
+                "maxLength": "",
+                "minLength": ""
+            }
+        },
+        {
+            "type": "email",
+            "id": "email",
+            "name": "email",
+            "label": "Enter Email",
+            "classes": "col-md-6  form-control",
+            "placeholder": "Enter your email address",
+            "suggestion": "",
+            "config": {
+                "disabled": false,
+                "readOnly": false,
+                "checked": false,
+                "hidden": false
+            },
+            "options": [],
+            "value": "",
+            "htmlElement": "email",
+            "errorMessage": "",
+            "valid": false,
+            "validation": {
+                "required": true,
+                "maxLength": "",
+                "minLength": ""
+            }
+        },
+        {
+            "type": "password",
+            "id": "password",
+            "name": "password",
+            "label": "Enter Password",
+            "classes": "col-md-6  form-control",
+            "placeholder": "Enter your password",
+            "suggestion": "",
+            "config": {
+                "disabled": false,
+                "readOnly": false,
+                "checked": false,
+                "hidden": false
+            },
+            "options": [],
+            "value": "",
+            "htmlElement": "password",
+            "errorMessage": "",
+            "valid": false,
+            "validation": {
+                "required": true,
+                "maxLength": "",
+                "minLength": ""
+            }
+        },
+        {
+            "type": "tel",
+            "id": "phone",
+            "name": "phone",
+            "classes": "col-md-6  form-control",
+            "label": "Enter Phone Number",
+            "placeholder": "Enter your phone number",
+            "suggestion": "",
+            "config": {
+                "hidden": false,
+                "disabled": false,
+                "readOnly": false,
+                "checked": false
+            },
+            "value": "",
+            "htmlElement": "text",
+            "errorMessage": "",
+            "valid": "",
+            "validation": {
+                "required": true,
+                "maxLength": "10",
+                "minLength": "10"
+            }
+        }
+    ]
+}

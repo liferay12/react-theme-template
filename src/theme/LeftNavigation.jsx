@@ -5,7 +5,8 @@ import { Task } from "../component/Task";
 import { Login } from "./component/Login";
 import { ChatBox } from "./component/ChatBox";
 import Countries from "./component/Countries";
-
+import {SignIn} from "./component/SignIn";
+import {SignUp} from "./component/SignUp";
 const section = [
   {
     title: "YOUR COMPANY",
@@ -32,13 +33,13 @@ const section = [
             icon: "",
             name: "Dashboard-light",
             path: "/light",
-            subComponent: <Test></Test>,
+            subComponent: Test,
           },
           {
             icon: "",
             name: "Dashboard-dark",
             path: "/dark",
-            subComponent: <Test1></Test1>,
+            subComponent: Test1,
           },
         ],
       },
@@ -57,7 +58,7 @@ const section = [
         ),
         name: "Employee",
         path: "/Employee",
-        component: <Test></Test>,
+        component: Test,
         subItem: [],
       },
       {
@@ -89,7 +90,7 @@ const section = [
         ),
         name: "Core HR",
         path: "/core-hr",
-        component: <Test1 />,
+        component: Test1 ,
         subItem: [],
       },
       {
@@ -108,7 +109,7 @@ const section = [
         ),
         name: "Finance",
         path: "/Finance",
-        component: <Finance></Finance>,
+        component: Finance,
         subItem: [],
       },
       {
@@ -140,13 +141,13 @@ const section = [
             icon: "",
             name: "task",
             path: "/tasks",
-            subComponent: <Countries></Countries>,
+            subComponent: Countries,
           },
           {
             icon: "",
             name: "task summary",
             path: "/tasksummary",
-            subComponent: <Task></Task>,
+            subComponent: Task
           },
         ],
       },
@@ -177,19 +178,19 @@ const section = [
             icon: "",
             name: "profile",
             path: "/profile",
-            subComponent: "component-profile",
+            subComponent: SignIn
           },
           {
             icon: "",
             name: "Edit-profile",
             path: "/Edit-profile",
-            subComponent: "component-Edit-profile",
+            subComponent: SignUp,
           },
           {
             icon: "icon-Email",
             name: "Email",
             path: "/Email",
-            subComponent: <ChatBox></ChatBox>,
+            subComponent: Login
           },
         ],
       },

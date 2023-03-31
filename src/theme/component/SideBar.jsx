@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faCoffee } from '@fortawesome/fontawesome-free-solid'
 import $ from "jquery";
 import { useEffect, useState, useRef } from "react";
-import { NavLink,useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import BreadCrumb from './BreadCrumb';
 
 
@@ -11,7 +11,7 @@ export const SideBar = (props) => {
 
     const windowWidth = useRef(window.innerWidth);
 
-    console.log(useLocation())
+
 
 
     let [width, setWidth] = useState(windowWidth.current);
@@ -19,7 +19,6 @@ export const SideBar = (props) => {
     let preDropdown = "";
     var handleMenuPosition = function (value) {
         console.log("value", value)
-
         $("#" + value).toggle();
     };
     useEffect(() => {

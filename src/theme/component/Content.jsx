@@ -1,10 +1,26 @@
-import {Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { UrlProtect } from "../Service/UrlProtect";
+import { SignIn } from "./SignIn";
+import SignUp from "./SignUp";
+
 
 export const Content = (props) => {
 
   return (
     <>
       <Routes>
+        {/* <Route
+          
+          exact
+          path={'/signin'}
+          element={<UrlProtect Component={SignIn} />}
+        />
+        <Route
+          
+          exact
+          path={'/signup'}
+          element={<UrlProtect Component={SignUp} />}
+        /> */}
         {props.data.map((section) => (
           <>
             {section.option.map((item, i) => (
@@ -16,9 +32,9 @@ export const Content = (props) => {
                         key={j}
                         exact
                         path={subItem.path}
-                        element={subItem.subComponent}
+                        element={<UrlProtect Component={subItem.subComponent} />}
                       />
-                      {console.log(subItem.path + " : " + subItem.subComponent)}
+
                     </>
                   ))
                 ) : (
@@ -26,7 +42,7 @@ export const Content = (props) => {
                     key={i}
                     exact
                     path={item.path}
-                    element={item.component}
+                    element={<UrlProtect Component={item.component} />}
                   />
                 )}
               </>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from '../library/renderer/FormRenderer';
-import form from '../form.json'
+import form from '../json-data/Employee.json'
 
 const Home = () => {
     const submitFunc = (event) => {
@@ -9,7 +9,11 @@ const Home = () => {
     }
     return (
         <div className='Home'>
-            <Form formObject={form} submit={(event) => submitFunc(event)} />
+            <div className='row'>
+                <div className='col-md-6 offset-md-3 card'>
+                    <Form formObject={form} submit={(event) => submitFunc(event)} />
+                </div>
+            </div>
         </div>
     );
 }

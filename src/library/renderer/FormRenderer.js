@@ -24,8 +24,8 @@ const Form = (props) => {
             {console.log("Form-Submit data--->", formData)}
             <form onSubmit={submit}>
                 <Renderer fieldArray={fieldArray} setFieldArray={setFieldArray} />
-                <div className='text-center'>
-                    <button type='submit' className='btn btn-primary'>Submit</button>
+                <div className='text-center mt-3'>
+                    <button type='submit' className='btn btn-primary form-control'>Submit</button>
                 </div>
             </form>
         </div>

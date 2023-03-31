@@ -6,10 +6,17 @@ import { Setting } from "./Setting";
 import { Notification } from "./Notification";
 import { ChatBox } from "./ChatBox";
 import { useState } from "react";
-
+import { NavLink } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
 export const Topbar = (props) => {
-// const [chabox, setChabox]=useState(false);
+	// const [chabox, setChabox]=useState(false);
+	const [show, setShow] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 
 	return (
 		<>
@@ -31,67 +38,89 @@ export const Topbar = (props) => {
 							</div>
 							<ul className="navbar-nav header-right">
 								{
-									props.data.map((item) =>
-										{
-											if(item.type === "setting"){
-												return(
+									props.data.map((item) => {
+										if (item.type === "setting") {
+											return (
 												<li className="nav-item notification_dropdown" >
-													<a className="nav-link " href={item.path} data-bs-toggle="dropdown" data-target="#setting">
+													<NavLink className="nav-link " to={item.path} data-bs-toggle="dropdown" data-target="#setting">
 														{item.name}
 														<Setting></Setting>
-													</a>
+													</NavLink>
 												</li>
-												)
-											}
-											else if(item.type === "notification"){
-												return(
+											)
+										}
+										else if (item.type === "notification") {
+											return (
 												<li className="nav-item  notification_dropdown" >
-													<a className="nav-link " href={item.path} data-bs-toggle="dropdown" data-target="#notification">
+													<NavLink className="nav-link " to={item.path} data-bs-toggle="dropdown" data-target="#notification">
 														{item.name}
 														<Notification></Notification>
-													</a>
+													</NavLink>
 												</li>)
-											}
-											else if(item.type === "message"){
-												return(
-												<li className="nav-item notification_dropdown" >
-													<a className="nav-link " href={item.path} data-bs-toggle="dropdown" data-target="#message">
-														{item.name}
-														<ChatBox></ChatBox> 
-													</a>
-												</li>)
-											}
-											// else if(item.type === "button"){
-											// 	return(
-											// 		<li className="nav-item align-items-center header-border">
-											// 			<a href={item.path} className="btn btn-primary btn-sm">
-											// 				{item.name}
-											// 			</a>
-											// 		</li>
-
-											// 	)
-											// }
-											else {
-												return(
-													<li className="nav-item notification_dropdown" >
-														<a className="nav-link" href={item.path} >
-															{item.name}
-															
-														</a>
-													</li>
-												)
-											}
 										}
+										else if (item.type === "message") {
+											return (
+												<li className="nav-item notification_dropdown" >
+													<NavLink className="nav-link " to={item.path} data-bs-toggle="dropdown" data-target="#message">
+														{item.name}
+														<ChatBox></ChatBox>
+													</NavLink>
+												</li>)
+										}
+										else if (item.type === "signin") {
+											return (
+												// <li className="nav-item align-items-center header-border">
+												// 	<NavLink to={item.path} className="btn btn-danger btn-sm" onClick={handleShow}>
+												// 		{item.name}
+												// 	</NavLink>
+												// </li>
+												<li className="nav-item align-items-center header-border">
+													<NavLink className="nav-link " to={item.path} >
+														{item.name}
+
+													</NavLink>
+												</li>
+
+											)
+										}
+										else if (item.type === "signup") {
+											return (
+												<>
+													{/* <li className="nav-item align-items-center header-border">
+														<NavLink to={item.path} className="btn btn-danger btn-sm">
+															{item.name}
+														</NavLink>
+													</li> */}
+													<li className="nav-item align-items-center header-border">
+														<NavLink className="nav-link " to={item.path} >
+															{item.name}
+
+														</NavLink>
+													</li>
+												</>
+											)
+										}
+										else {
+											return (
+												<li className="nav-item notification_dropdown" >
+													<a className="nav-link" href={item.path} >
+														{item.name}
+
+													</a>
+												</li>
+											)
+										}
+									}
 									)
 								}
 
 								{/* For setting icon in heder Start*/}
-								
+
 								{/* For setting icon in heder End */}
 
 								{/* For Notification Icon in header strat */}
 
-								
+
 
 
 								{/* For Notification Icon in header end */}
@@ -101,9 +130,9 @@ export const Topbar = (props) => {
 								<Profile></Profile>
 
 								{/* For Profile In header end */}
-								
-								
-								
+
+
+
 							</ul>
 
 						</div >
@@ -111,7 +140,38 @@ export const Topbar = (props) => {
 					</nav >
 				</div >
 			</div >
-			
+
+			<Modal show={show} onHide={handleClose}>
+				<Modal.Header closeButton>
+					<Modal.Title>Login</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					<Form>
+						<Form.Group className="mb-3" controlId="formBasicEmail">
+							<Form.Label>Email address</Form.Label>
+							<Form.Control type="email" placeholder="Enter email" />
+
+						</Form.Group>
+
+						<Form.Group className="mb-3" controlId="formBasicPassword">
+							<Form.Label>Password</Form.Label>
+							<Form.Control type="password" placeholder="Password" />
+						</Form.Group>
+						<Button variant="primary" type="submit" className="float-right">
+							Login
+						</Button>
+					</Form>
+				</Modal.Body>
+				{/* <Modal.Footer>
+					<Button variant="secondary" onClick={handleClose}>
+						Close
+					</Button>
+					<Button variant="primary" onClick={handleClose}>
+						Save Changes
+					</Button>
+				</Modal.Footer> */}
+			</Modal>
+
 		</>
 	);
 }

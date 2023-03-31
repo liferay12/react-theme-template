@@ -8,13 +8,19 @@ import { W3Crm } from "./theme/js/custom";
 import { EmailService } from "./theme/Service/EmailService";
 import Home from "./component/Home";
 
+import toast, { Toaster } from 'react-hot-toast';
 function App() {
   EmailService.email = "ashwani@gmail.com";
   EmailService.name = "Lohit rao";
+  const notify = () => toast.success('Here is your toast.');
 
   return (
     <>
+      {/* <h1>Hello</h1>
+      <button type="button" onClick={notify}>Notify</button> */}
+      <Toaster position="left" reverseOrder={false} />
       <ThemeRender data={themeData}></ThemeRender>;
+      {/* <button onClick={notify}>Notify</button> */}
     </>
   );
 }

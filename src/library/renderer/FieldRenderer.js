@@ -63,7 +63,7 @@ const Renderer = (props) => {
         <div className='mt-3'>
             {
                 fieldArray.map((field, index) => (
-                    <div key={`${field.id}_${index}`}>
+                    <div  key={`${field.id}_${index}`}>
                         {setField(field, index)}
                     </div>
                 ))
