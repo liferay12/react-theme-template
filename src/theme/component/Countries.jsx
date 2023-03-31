@@ -3,7 +3,7 @@ import Table from "../../component/Table";
 import DataTable from "react-data-table-component";
 import axios from "axios";
 
-const Planets = () => {
+const Countries = () => {
     //const [columns, setcolumns] = useState([]);
     const [Countries, setCountries] = useState([]);
     //const [Errors, setErrors] = useState([]);
@@ -93,4 +93,4 @@ const Planets = () => {
         </>
     );
 };
-export default Planets;
+export default Countries;
