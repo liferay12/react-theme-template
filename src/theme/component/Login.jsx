@@ -7,13 +7,14 @@ export const Login = (props) => {
 
 	console.log(loginForm)
 	const formSumit = (e) => {
-		toast.success('Successfully toasted!')
+		// toast.success('Successfully toasted!')
 		e.preventDefault();
 		console.log("submitting form...");
 	}
 	const submitFunc = (event) => {
 		event.preventDefault();
 		console.log(event);
+		toast.success('Successfully toasted!')
 	}
 	return (
 		<div className="browse-job login-style3">
@@ -35,7 +36,7 @@ export const Login = (props) => {
 
 												<div className="tab-content w-100" id="nav-tabContent">
 													<div className="tab-pane fade show active" id="nav-personal" role="tabpanel" aria-labelledby="nav-personal-tab">
-														<form onSubmit={formSumit} className=" dz-form pb-3">
+														{/* <form onSubmit={formSumit} className=" dz-form pb-3"> */}
 															{/* <h3 className="form-title m-t0">Login</h3>
 															<div className="dz-separator-outer m-b5">
 																<div className="dz-separator bg-primary style-liner"></div>
@@ -51,7 +52,7 @@ export const Login = (props) => {
 																<button className="btn btn-primary button-md btn-block" id="nav-sign-tab" type="submit" role="tab" aria-controls="nav-sign" aria-selected="false" tabindex="-1">login</button>
 
 															</div> */}
-														</form>
+														{/* </form> */}
 													</div>
 
 													{/* <div className="tab-pane fade" id="nav-sign" role="tabpanel" aria-labelledby="nav-sign-tab">
