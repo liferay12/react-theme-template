@@ -10,21 +10,29 @@ export const Login = (props) => {
 	const submitFunc = (event) => {
 		event.preventDefault();
 		console.log(event);
-		toast.success('Successfully toasted!')
+		toast.success('Successfully toasted!');
+		localStorage.setItem("setAuthenticated", true);
 	}
 	return (
-		<div className="browse-job login-style3">
+	// 	<body class="vh-100" data-typography="poppins" data-theme-version="light" data-layout="vertical" data-nav-headerbg="color_4" data-headerbg="color_4" data-sidebar-style="full" data-sidebarbg="color_1" data-sidebar-position="fixed" data-header-position="fixed" data-container="wide" direction="ltr" data-primary="color_1" data-secondary="color_1">
+	// <div class="page-wraper">
+		<div className="browse-job login-style3" style={{left: "0",
+			position: "fixed",
+			top: "0",
+			zIndex: "999",
+			width: "-webkit-fill-available",
+			width: "inherit"}}>
 
-			<div className="bg-img-fix overflow-hidden" style={{ background: "#fff " }}>
+			<div className="bg-img-fix overflow-hidden" style={{ background: "#fff url(https://w3crm.dexignzone.com/xhtml/images/background/bg6.jpg)", height: "100vh" }}>
 				<div className="row gx-0">
-					<div className=" col-xl-6 col-lg-5 col-md-6 col-sm-12 bg-white ">
-						<div id="mCSB_1" className="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" >
+					<div className=" col-xl-6 col-lg-5 col-md-6 col-sm-12 offset-3 vh-100  ">
+						<div id="mCSB_1" className="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style={{maxHeight: "653px"}} tabindex="0">
 							<div id="mCSB_1_container" className="mCSB_container" style={{ position: "relative", top: "0", left: "0", dir: "ltr" }}>
 								<div className="login-form style-2">
 									<div className="card-body">
 										<div className="logo-header">
-											<a href="https://w3crm.dexignzone.com/xhtml/index.html" className="logo"><img src="../images/logo-full.png" alt="" className="width-230 light-logo" /></a>
-											<a href="https://w3crm.dexignzone.com/xhtml/index.html" className="logo"><img src="../images/logofull-white.png" alt="" className="width-230 dark-logo" /></a>
+											{/* <a href="https://w3crm.dexignzone.com/xhtml/index.html" className="logo"><img src={require("../images/logo-full.png")} alt="" className="width-230 light-logo" /></a> */}
+											<a href="https://w3crm.dexignzone.com/xhtml/index.html" className="logo"><img src={require("../images/logofull-white.png")} alt="" className="width-230 dark-logo" /></a>
 										</div>
 
 										<nav>
@@ -108,6 +116,6 @@ export const Login = (props) => {
 				</div>
 			</div>
 		</div>
-
+	// </div></body>
 	);
 }
