@@ -5,8 +5,9 @@ import { Task } from "../component/Task";
 import { Login } from "./component/Login";
 import { ChatBox } from "./component/ChatBox";
 import Countries from "./component/Countries";
-import {SignIn} from "./component/SignIn";
-import {SignUp} from "./component/SignUp";
+import { SignIn } from "./component/SignIn";
+import { SignUp } from "./component/SignUp";
+import Home from "../component/Home";
 const section = [
   {
     title: "YOUR COMPANY",
@@ -25,23 +26,9 @@ const section = [
           </svg>
         ),
         name: "Dashboad",
-        path: "",
-        component: "",
-        subItem: [
-          {
-
-            icon: "",
-            name: "Dashboard-light",
-            path: "/light",
-            subComponent: Test,
-          },
-          {
-            icon: "",
-            name: "Dashboard-dark",
-            path: "/dark",
-            subComponent: Test1,
-          },
-        ],
+        path: "/",
+        component: Home,
+        subItem: [],
       },
       {
         icon: (
@@ -90,7 +77,7 @@ const section = [
         ),
         name: "Core HR",
         path: "/core-hr",
-        component: Test1 ,
+        component: Test1,
         subItem: [],
       },
       {
@@ -232,7 +219,7 @@ const section = [
           },
         ],
       },
-      
+
     ],
   },
 ];

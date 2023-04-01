@@ -6,6 +6,7 @@ export const UrlProtect = (props) => {
     
     return (
         <div>
+           
             <Component />
         </div>
     )

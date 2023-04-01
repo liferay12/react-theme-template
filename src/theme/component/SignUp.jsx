@@ -1,16 +1,12 @@
 import React from 'react'
 import signUpFormData from "../../json-data/signUp.json"
 import Form from '../../library/renderer/FormRenderer';
+import toast from 'react-hot-toast';
 export const SignUp = () => {
     const submitFunc = (event) => {
         event.preventDefault();
         console.log(event);
-    }
-    const formSumit = (e) => {
-        e.preventDefault();
-        console.log("submitting form...");
-        // e
-
+        toast.success('Successfully toasted!')
     }
     return (
         <div className="browse-job login-style3">
@@ -32,16 +28,16 @@ export const SignUp = () => {
 
                                                 <div className="tab-content w-100" id="nav-tabContent">
                                                     <div className="tab-pane fade show active " id="nav-personal" role="tabpanel" aria-labelledby="nav-personal-tab">
-                                                        <form className="dz-form py-2">
-                                                            {/* <h3 className="form-title">Sign Up</h3>
+                                                        {/* <form className="dz-form py-2"> */}
+                                                        {/* <h3 className="form-title">Sign Up</h3>
                                                             <div className="dz-separator-outer m-b5">
                                                                 <div className="dz-separator bg-primary style-liner"></div>
                                                             </div>
                                                             <p>Enter your personal details below: </p> */}
-                                                            <div className="form-group mt-3">
-                                                                <Form formObject={signUpFormData} submit={(event) => submitFunc(event)} />
-                                                            </div>
-                                                            {/* <div className="form-group mt-3">
+                                                        <div className="form-group mt-3">
+                                                            <Form formObject={signUpFormData} submit={(event) => submitFunc(event)} />
+                                                        </div>
+                                                        {/* <div className="form-group mt-3">
                                                                 <input name="dzName" required="" className="form-control" placeholder="User Name" type="text" />
                                                             </div>
                                                             <div className="form-group mt-3">
@@ -55,11 +51,11 @@ export const SignUp = () => {
                                                                 <input name="dzName" required="" className="form-control" placeholder="Re-type Your Password" type="password" />
                                                             </div> */}
 
-                                                            {/* <div className="form-group clearfix text-left">
+                                                        {/* <div className="form-group clearfix text-left">
 
                                                                 <button className="btn btn-primary float-end">Submit</button>
                                                             </div> */}
-                                                        </form>
+                                                        {/* </form> */}
                                                     </div>
 
 

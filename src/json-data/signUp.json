@@ -102,31 +102,7 @@
                 "maxLength": "",
                 "minLength": ""
             }
-        },
-        {
-            "type": "password",
-            "id": "rePassword",
-            "name": "email",
-            "label": "Re-Type Your Password",
-            "classes": " form-control",
-            "placeholder": "Re-Type Your Password",
-            "suggestion": "",
-            "config": {
-                "disabled": false,
-                "readOnly": false,
-                "checked": false,
-                "hidden": false
-            },
-            "options": [],
-            "value": "",
-            "htmlElement": "rePassword",
-            "errorMessage": "",
-            "valid": false,
-            "validation": {
-                "required": true,
-                "maxLength": "",
-                "minLength": ""
-            }
         }
+       
     ]
 }

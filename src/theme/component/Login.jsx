@@ -6,11 +6,7 @@ import toast from 'react-hot-toast';
 export const Login = (props) => {
 
 	console.log(loginForm)
-	const formSumit = (e) => {
-		// toast.success('Successfully toasted!')
-		e.preventDefault();
-		console.log("submitting form...");
-	}
+	
 	const submitFunc = (event) => {
 		event.preventDefault();
 		console.log(event);

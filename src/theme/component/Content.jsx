@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { UrlProtect } from "../Service/UrlProtect";
+import { Login } from "./Login";
 import { SignIn } from "./SignIn";
-import SignUp from "./SignUp";
+import { SignUp } from "./SignUp";
 
 
 export const Content = (props) => {
@@ -10,13 +11,13 @@ export const Content = (props) => {
     <>
       <Routes>
         {/* <Route
-          
+
           exact
-          path={'/signin'}
-          element={<UrlProtect Component={SignIn} />}
+          path={'/'}
+          element={<UrlProtect Component={Login} />}
         />
         <Route
-          
+
           exact
           path={'/signup'}
           element={<UrlProtect Component={SignUp} />}
