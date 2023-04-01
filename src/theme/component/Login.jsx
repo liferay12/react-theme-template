@@ -16,10 +16,11 @@ export const Login = (props) => {
 		// console.log("submitting login form...")
 		localStorage.setItem("isLogin", true);
 		let isLogin = localStorage.getItem("isLogin");
-		// console.log("isLogin ----- " + isLogin)
-		// console.log(event);
-		// toast.success('Successfully toasted!');
-		navigate("/")
+		event.
+			// console.log("isLogin ----- " + isLogin)
+			// console.log(event);
+			// toast.success('Successfully toasted!');
+			navigate("/email")
 
 	}
 	useEffect(() => {
@@ -30,6 +31,10 @@ export const Login = (props) => {
 
 	});
 
+	const emailHandler = (e) => {
+		console.log("-113122312301p9p"+e.target.value);
+		localStorage.setItem("email", e.target.value);
+	}
 	return (
 		// 	<body class="vh-100" data-typography="poppins" data-theme-version="light" data-layout="vertical" data-nav-headerbg="color_4" data-headerbg="color_4" data-sidebar-style="full" data-sidebarbg="color_1" data-sidebar-position="fixed" data-header-position="fixed" data-container="wide" direction="ltr" data-primary="color_1" data-secondary="color_1">
 		// <div class="page-wraper">
@@ -77,7 +82,7 @@ export const Login = (props) => {
 															</div>
 															<p>Enter your personal details below: </p>
 															<div className="form-group mt-3">
-																<input name="dzName" required="" className="form-control" placeholder="email" type="email" />
+																<input name="dzName" required="" className="form-control" placeholder="email" type="email" onBlur={emailHandler} />
 															</div>
 
 

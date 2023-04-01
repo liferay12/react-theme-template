@@ -10,7 +10,7 @@ import Home from "./component/Home";
 
 import toast, { Toaster } from 'react-hot-toast';
 function App() {
-  EmailService.email = "ashwani@gmail.com";
+  EmailService.email = localStorage.getItem("email");
   EmailService.name = "Lohit rao";
   const notify = () => toast.success('Here is your toast.');
 
