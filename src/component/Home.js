@@ -4,7 +4,7 @@ import form from '../json-data/Employee.json'
 
 const Home = () => {
     const submitFunc = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         console.log(event);
     }
     return (

@@ -4,31 +4,48 @@ import loginForm from "../../json-data/login.json"
 import Form from "../../library/renderer/FormRenderer";
 import toast from 'react-hot-toast';
 import bg6 from '../images/bg6.jpg';
-
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import React from 'react'
 export const Login = (props) => {
-
+	const navigate = useNavigate();
 	console.log(loginForm)
-	
+
 	const submitFunc = (event) => {
-		event.preventDefault();
-		console.log(event);
-		toast.success('Successfully toasted!');
-		localStorage.setItem("setAuthenticated", true);
+		// event.preventDefault();	
+		// console.log("submitting login form...")
+		localStorage.setItem("isLogin", true);
+		let isLogin = localStorage.getItem("isLogin");
+		// console.log("isLogin ----- " + isLogin)
+		// console.log(event);
+		// toast.success('Successfully toasted!');
+
+
 	}
+	useEffect(() => {
+		let isLogin = localStorage.getItem("isLogin");
+		if (isLogin) {
+			navigate("/")
+		}
+
+	});
+
 	return (
-	// 	<body class="vh-100" data-typography="poppins" data-theme-version="light" data-layout="vertical" data-nav-headerbg="color_4" data-headerbg="color_4" data-sidebar-style="full" data-sidebarbg="color_1" data-sidebar-position="fixed" data-header-position="fixed" data-container="wide" direction="ltr" data-primary="color_1" data-secondary="color_1">
-	// <div class="page-wraper">
-		<div className="browse-job login-style3" style={{left: "0",
+		// 	<body class="vh-100" data-typography="poppins" data-theme-version="light" data-layout="vertical" data-nav-headerbg="color_4" data-headerbg="color_4" data-sidebar-style="full" data-sidebarbg="color_1" data-sidebar-position="fixed" data-header-position="fixed" data-container="wide" direction="ltr" data-primary="color_1" data-secondary="color_1">
+		// <div class="page-wraper">
+		<div className="browse-job login-style3" style={{
+			left: "0",
 			position: "fixed",
 			top: "0",
 			zIndex: "999",
 			width: "-webkit-fill-available",
-			width: "inherit"}}>
+			width: "inherit"
+		}}>
 
 			<div className="bg-img-fix overflow-hidden" style={{ background: "#fff", backgroundImage: `url(${bg6})`, height: "100vh" }}>
 				<div className="row gx-0">
 					<div className=" col-xl-6 col-lg-5 col-md-6 col-sm-12 offset-3 vh-100  ">
-						<div id="mCSB_1" className="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style={{maxHeight: "653px"}} tabindex="0">
+						<div id="mCSB_1" className="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style={{ maxHeight: "653px" }} tabindex="0">
 							<div id="mCSB_1_container" className="mCSB_container" style={{ position: "relative", top: "0", left: "0", dir: "ltr" }}>
 								<div className="login-form style-2">
 									<div className="card-body">
@@ -43,18 +60,41 @@ export const Login = (props) => {
 												<div className="tab-content w-100" id="nav-tabContent">
 													<div className="tab-pane fade show active" id="nav-personal" role="tabpanel" aria-labelledby="nav-personal-tab">
 														{/* <form onSubmit={formSumit} className=" dz-form pb-3"> */}
-															{/* <h3 className="form-title m-t0">Login</h3>
+														{/* <h3 className="form-title m-t0">Login</h3>
 															<div className="dz-separator-outer m-b5">
 																<div className="dz-separator bg-primary style-liner"></div>
 															</div>
 															<p>Enter your e-mail address and your password. </p> */}
-															<div className="form-group mb-3">
+														{/* <div className="form-group mb-3">
 																<Form formObject={loginForm} submit={(event) => submitFunc(event)} />
+															</div>
+															 */}
+
+														<form onSubmit={submitFunc} className="dz-form py-2">
+															<h3 className="form-title">Login</h3>
+															<div className="dz-separator-outer m-b5">
+																<div className="dz-separator bg-primary style-liner"></div>
+															</div>
+															<p>Enter your personal details below: </p>
+															<div className="form-group mt-3">
+																<input name="dzName" required="" className="form-control" placeholder="email" type="email" />
 															</div>
 
 
+															<div className="form-group mt-3">
+																<input name="dzName" required="" className="form-control" placeholder="Password" type="password" />
+															</div>
 
-															{/* <div className="text-center bottom">
+
+															<div className="form-group clearfix text-left mt-4">
+
+																<button type="submit" className="btn btn-primary float-end">Submit</button>
+															</div>
+														</form>
+
+
+
+														{/* <div className="text-center bottom">
 																<button className="btn btn-primary button-md btn-block" id="nav-sign-tab" type="submit" role="tab" aria-controls="nav-sign" aria-selected="false" tabindex="-1">login</button>
 
 															</div> */}
@@ -118,6 +158,6 @@ export const Login = (props) => {
 				</div>
 			</div>
 		</div>
-	// </div></body>
+		// </div></body>
 	);
 }

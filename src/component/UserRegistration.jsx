@@ -16,7 +16,7 @@ export default function UserRegistration() {
     }
 
     const submitFunc = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         console.log(event);
     }
     return (
