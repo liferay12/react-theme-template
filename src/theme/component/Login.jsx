@@ -19,7 +19,7 @@ export const Login = (props) => {
 		// console.log("isLogin ----- " + isLogin)
 		// console.log(event);
 		// toast.success('Successfully toasted!');
-
+		navigate("/")
 
 	}
 	useEffect(() => {
