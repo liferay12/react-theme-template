@@ -3,6 +3,8 @@ import axios from "axios";
 import loginForm from "../../json-data/login.json"
 import Form from "../../library/renderer/FormRenderer";
 import toast from 'react-hot-toast';
+import bg6 from '../images/bg6.jpg';
+
 export const Login = (props) => {
 
 	console.log(loginForm)
@@ -23,7 +25,7 @@ export const Login = (props) => {
 			width: "-webkit-fill-available",
 			width: "inherit"}}>
 
-			<div className="bg-img-fix overflow-hidden" style={{ background: "#fff url(https://w3crm.dexignzone.com/xhtml/images/background/bg6.jpg)", height: "100vh" }}>
+			<div className="bg-img-fix overflow-hidden" style={{ background: "#fff", backgroundImage: `url(${bg6})`, height: "100vh" }}>
 				<div className="row gx-0">
 					<div className=" col-xl-6 col-lg-5 col-md-6 col-sm-12 offset-3 vh-100  ">
 						<div id="mCSB_1" className="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style={{maxHeight: "653px"}} tabindex="0">
@@ -32,7 +34,7 @@ export const Login = (props) => {
 									<div className="card-body">
 										<div className="logo-header">
 											{/* <a href="https://w3crm.dexignzone.com/xhtml/index.html" className="logo"><img src={require("../images/logo-full.png")} alt="" className="width-230 light-logo" /></a> */}
-											<a href="https://w3crm.dexignzone.com/xhtml/index.html" className="logo"><img src={require("../images/logofull-white.png")} alt="" className="width-230 dark-logo" /></a>
+											{/* <a href="https://w3crm.dexignzone.com/xhtml/index.html" className="logo"><img src={require("../images/logofull-white.png")} alt="" className="width-230 dark-logo" /></a> */}
 										</div>
 
 										<nav>
