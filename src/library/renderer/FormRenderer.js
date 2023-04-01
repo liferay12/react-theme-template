@@ -9,6 +9,7 @@ const Form = (props) => {
     const submit = (e) => {
         e.preventDefault();
         let a = [];
+
         fieldArray.map((item, index) => {
             console.log('item..', item.value)
             if (item.value != "") {
