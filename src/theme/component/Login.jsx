@@ -15,6 +15,7 @@ export const Login = (props) => {
 
 		localStorage.setItem("isLogin", true);
 		let isLogin = localStorage.getItem("isLogin");
+		toast.success("You have been Succesfully logged in !")
 		navigate("/email")
 
 	}

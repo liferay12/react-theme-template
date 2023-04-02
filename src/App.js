@@ -11,16 +11,14 @@ import Home from "./component/Home";
 import toast, { Toaster } from 'react-hot-toast';
 function App() {
   EmailService.email = localStorage.getItem("email");
-  EmailService.name = "Lohit rao";
+  EmailService.name = "Ashwani rao";
   const notify = () => toast.success('Here is your toast.');
 
   return (
     <>
-      {/* <h1>Hello</h1>
-      <button type="button" onClick={notify}>Notify</button> */}
       <Toaster position="left" reverseOrder={false} />
       <ThemeRender data={themeData}></ThemeRender>;
-      {/* <button onClick={notify}>Notify</button> */}
+
     </>
   );
 }
