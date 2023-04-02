@@ -4,11 +4,13 @@ import { Test1 } from "../component/Test1";
 import { Task } from "../component/Task";
 import { Login } from "./component/Login";
 import { ChatBox } from "./component/ChatBox";
-import Countries from "./component/Countries";
+import Countries from "../component/Countries";
 import { SignIn } from "./component/SignIn";
 import { SignUp } from "./component/SignUp";
 import Home from "../component/Home";
 import { UserList } from "../component/UserList";
+import { Dashboard } from "../component/Dashboard";
+import Employee from "../component/Employee";
 const section = [
   {
     title: "YOUR COMPANY",
@@ -28,7 +30,7 @@ const section = [
         ),
         name: "Dashboad",
         path: "/",
-        component: Home,
+        component: Dashboard,
         subItem: [],
       },
       {
@@ -46,7 +48,7 @@ const section = [
         ),
         name: "Employee",
         path: "/Employee",
-        component: Test,
+        component: Employee,
         subItem: [],
       },
       {
@@ -166,19 +168,19 @@ const section = [
             icon: "",
             name: "profile",
             path: "/profile",
-            subComponent: SignIn
+            subComponent: 'SignIn'
           },
           {
             icon: "",
             name: "Edit-profile",
             path: "/Edit-profile",
-            subComponent: SignUp,
+            subComponent: "Edit-profile",
           },
           {
             icon: "icon-Email",
             name: "Email",
             path: "/Email",
-            subComponent: Login
+            subComponent: "Email"
           },
         ],
       },

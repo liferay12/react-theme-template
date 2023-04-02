@@ -11,7 +11,7 @@ const Home = () => {
         <div className='Home'>
             <div className='row'>
                 <div className='col-md-6 offset-md-3 card'>
-                    <Form formObject={form} submit={(event) => submitFunc(event)} />
+                    
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@ export const Login = (props) => {
 		localStorage.setItem("isLogin", true);
 		let isLogin = localStorage.getItem("isLogin");
 		toast.success("You have been Succesfully logged in !")
-		navigate("/email")
+		navigate("/login")
 
 	}
 	useEffect(() => {
@@ -76,9 +76,9 @@ export const Login = (props) => {
 															<div className="dz-separator-outer m-b5">
 																<div className="dz-separator bg-primary style-liner"></div>
 															</div>
-															<p>Enter your personal details below: </p>
+															<p>Enter your Credential below: </p>
 															<div className="form-group mt-3">
-																<input name="dzName" required="" className="form-control" placeholder="email" type="email" onBlur={emailHandler} />
+																<input name="dzName" required="" className="form-control" placeholder="Email" type="email" onBlur={emailHandler} />
 															</div>
 
 

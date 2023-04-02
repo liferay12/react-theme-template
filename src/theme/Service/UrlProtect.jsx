@@ -7,7 +7,7 @@ export const UrlProtect = (props) => {
     useEffect(() => {
         let isLogin = localStorage.getItem("isLogin");
         if (!isLogin) {
-            navigate("/Email")
+            navigate("/login")
         }
 
     });

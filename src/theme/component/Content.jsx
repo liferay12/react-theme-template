@@ -10,12 +10,13 @@ export const Content = (props) => {
   return (
     <>
       <Routes>
-        {/* <Route
+        <Route
 
           exact
-          path={'/'}
+          path={'/login'}
           element={<UrlProtect Component={Login} />}
         />
+        {/*
         <Route
 
           exact
