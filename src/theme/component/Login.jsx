@@ -12,15 +12,10 @@ export const Login = (props) => {
 	console.log(loginForm)
 
 	const submitFunc = (event) => {
-		// event.preventDefault();	
-		// console.log("submitting login form...")
+
 		localStorage.setItem("isLogin", true);
 		let isLogin = localStorage.getItem("isLogin");
-		event.
-			// console.log("isLogin ----- " + isLogin)
-			// console.log(event);
-			// toast.success('Successfully toasted!');
-			navigate("/email")
+		navigate("/email")
 
 	}
 	useEffect(() => {
@@ -32,7 +27,7 @@ export const Login = (props) => {
 	});
 
 	const emailHandler = (e) => {
-		console.log("-113122312301p9p"+e.target.value);
+		console.log("-113122312301p9p" + e.target.value);
 		localStorage.setItem("email", e.target.value);
 	}
 	return (

@@ -4,7 +4,6 @@ import Form from '../../library/renderer/FormRenderer';
 import toast from 'react-hot-toast';
 export const SignUp = () => {
     const submitFunc = (event) => {
-        // event.preventDefault();
         console.log("Sign up......")
         console.log(event);
         toast.success('Successfully toasted!')
