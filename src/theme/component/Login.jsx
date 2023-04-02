@@ -89,7 +89,7 @@ export const Login = (props) => {
 
 															<div className="form-group clearfix text-left mt-4">
 
-																<button type="submit" className="btn btn-primary float-end">Submit</button>
+																<button type="submit" className="btn btn-primary float-end">Login</button>
 															</div>
 														</form>
 
