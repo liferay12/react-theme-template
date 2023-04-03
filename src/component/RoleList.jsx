@@ -9,7 +9,7 @@ export const RoleList = () => {
     const [Filterroles, setFilterroles] = useState([]);
     useEffect(() => {
         async function fetchUserList() {
-            let user = await axios.get('http://localhost:9090/api/v1/role')
+            let user = await axios.get('http://localhost:8080/api/v1/role')
             console.log("--------" + user);
             setRoles(user.data);
             setFilterroles(user.data);
