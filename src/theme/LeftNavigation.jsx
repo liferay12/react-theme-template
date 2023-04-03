@@ -9,6 +9,8 @@ import { SignIn } from "./component/SignIn";
 import { SignUp } from "./component/SignUp";
 import Home from "../component/Home";
 import { UserList } from "../component/UserList";
+import Employee  from '../component/Employee';
+
 const section = [
   {
     title: "YOUR COMPANY",
@@ -34,20 +36,47 @@ const section = [
       {
         icon: (
           <svg
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-bell"
-            viewBox="0 0 16 16"
           >
-            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M10.986 14.0673C7.4407 14.0673 4.41309 14.6034 4.41309 16.7501C4.41309 18.8969 7.4215 19.4521 10.986 19.4521C14.5313 19.4521 17.5581 18.9152 17.5581 16.7693C17.5581 14.6234 14.5505 14.0673 10.986 14.0673Z"
+              stroke="#888888"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M10.986 11.0054C13.3126 11.0054 15.1983 9.11881 15.1983 6.79223C15.1983 4.46564 13.3126 2.57993 10.986 2.57993C8.65944 2.57993 6.77285 4.46564 6.77285 6.79223C6.76499 9.11096 8.63849 10.9975 10.9563 11.0054H10.986Z"
+              stroke="#888888"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
           </svg>
         ),
         name: "Employee",
-        path: "/Employee",
-        component: Test,
-        subItem: [],
+        path: "",
+        component: "",
+        subItem: [
+          {
+            icon: "",
+            name: "Employee List",
+            path: "/employee-list",
+            subComponent: Employee,
+          },
+          {
+            icon: "",
+            name: "Employee",
+            path: "/employee",
+            subComponent: Finance
+          }
+        ],
       },
       {
         icon: (
@@ -78,7 +107,7 @@ const section = [
         ),
         name: "Core HR",
         path: "/core-hr",
-        component: Test1,
+        component: Test,
         subItem: [],
       },
       {
@@ -127,8 +156,8 @@ const section = [
         subItem: [
           {
             icon: "",
-            name: "task",
-            path: "/tasks",
+            name: "Countries",
+            path: "/countries",
             subComponent: Countries,
           },
           {
@@ -203,20 +232,20 @@ const section = [
             icon: "icon-float",
             name: "float",
             path: "/float",
-            subComponent: "component-float",
+            subComponent: Test,
           },
           {
             icon: "icon-morris",
             name: "morris",
             path: "/morris",
-            subComponent: "component-morris",
+            subComponent: Test,
           },
 
           {
             icon: "icon-morris",
             name: "morris",
             path: "/morris",
-            subComponent: "component-morris",
+            subComponent: Test,
           },
         ],
       },
@@ -241,7 +270,7 @@ const section = [
             icon: "icon-float",
             name: "user",
             path: "/float",
-            subComponent: "component-float",
+            subComponent: Test,
           },
           {
             icon: "icon-morris",
@@ -254,13 +283,13 @@ const section = [
             icon: "icon-morris",
             name: "Role",
             path: "/morris",
-            subComponent: "component-morris",
+            subComponent: Test,
           },
           {
-            icon: "icon-morris",
+            icon: "icon",
             name: "Role List",
             path: "/morris",
-            subComponent: "component-morris",
+            subComponent: Test,
           }
         ],
       }
