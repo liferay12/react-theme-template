@@ -127,30 +127,6 @@
                 "maxLength": "",
                 "minLength": ""
             }
-        },
-        {
-            "type": "tel",
-            "id": "phone",
-            "name": "phone",
-            "classes": "col-md-6  form-control",
-            "label": "Enter Phone Number",
-            "placeholder": "Enter your phone number",
-            "suggestion": "",
-            "config": {
-                "hidden": false,
-                "disabled": false,
-                "readOnly": false,
-                "checked": false
-            },
-            "value": "",
-            "htmlElement": "text",
-            "errorMessage": "",
-            "valid": "",
-            "validation": {
-                "required": true,
-                "maxLength": "10",
-                "minLength": "10"
-            }
         }
     ]
 }

@@ -11,6 +11,7 @@ import Home from "../component/Home";
 import { UserList } from "../component/UserList";
 import Employee  from '../component/Employee';
 import UserRegistration from "../component/UserRegistration";
+import { Role } from "../component/Role";
 
 const section = [
   {
@@ -281,10 +282,10 @@ const section = [
           },
 
           {
-            icon: "icon-morris",
+            icon: "",
             name: "Role",
-            path: "/morris",
-            subComponent: Test,
+            path: "/role",
+            subComponent: Role,
           },
           {
             icon: "icon",
