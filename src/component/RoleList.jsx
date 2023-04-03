@@ -1,15 +1,12 @@
 import axios from 'axios';
-import { Button } from 'bootstrap';
+// import { Button } from 'bootstrap';
 import React, { useEffect, useRef, useState } from 'react'
 import DataTable from 'react-data-table-component';
 import { useDownloadExcel } from 'react-export-table-to-excel';
-import { Finance } from './Finance';
-
 export const RoleList = () => {
     const [roles, setRoles] = useState([]);
     const [search, setSearch] = useState("");
     const [Filterroles, setFilterroles] = useState([]);
-
     useEffect(() => {
         async function fetchUserList() {
             let user = await axios.get('http://localhost:9090/api/v1/role')
@@ -18,16 +15,16 @@ export const RoleList = () => {
             setFilterroles(user.data);
         };
         fetchUserList();
-        
+
     }, []);
 
-    // useEffect(() => {
-    //     const result = roles.filter(user => {
-    //         return user.name.toLowerCase().match(search.toLowerCase());
-    //     })
-    //     setFilterroles(result);
-    //     console.log("-------++++------" + roles);
-    // }, [search]);
+    useEffect(() => {
+        const result = roles.filter(user => {
+            return user.name.toLowerCase().match(search.toLowerCase());
+        })
+        setFilterroles(result);
+        console.log("-------++++------" + roles);
+    }, [search]);
 
     const column = [
         {
@@ -37,7 +34,7 @@ export const RoleList = () => {
         },
         {
             name: "Full Name",
-            selector: (row) => row.name+" "+row.title,
+            selector: (row) => row.name + " " + row.title,
             sortable: true
         },
         {
@@ -67,7 +64,6 @@ export const RoleList = () => {
         filename: 'roles table',
         sheet: 'roles'
     })
-
     return (
         <>
             {/* <button className="btn-primary btn btn-sm" onClick={<Finance></Finance>}>Add Role</button> */}
@@ -97,3 +93,4 @@ export const RoleList = () => {
         </>
     )
 }
+
