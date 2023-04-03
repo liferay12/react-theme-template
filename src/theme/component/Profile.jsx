@@ -7,7 +7,7 @@ export const Profile = () => {
         console.log("removing local storage..")
         localStorage.removeItem("isLogin");
         localStorage.removeItem("email");
-        navigate("/email")
+        navigate("/login")
     }
     return (
         <>

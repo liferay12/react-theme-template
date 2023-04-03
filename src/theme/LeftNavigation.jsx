@@ -10,6 +10,7 @@ import { SignUp } from "./component/SignUp";
 import Home from "../component/Home";
 import { UserList } from "../component/UserList";
 import Employee  from '../component/Employee';
+import UserRegistration from "../component/UserRegistration";
 
 const section = [
   {
@@ -269,8 +270,8 @@ const section = [
           {
             icon: "icon-float",
             name: "user",
-            path: "/float",
-            subComponent: Test,
+            path: "/user",
+            subComponent: UserRegistration,
           },
           {
             icon: "icon-morris",
