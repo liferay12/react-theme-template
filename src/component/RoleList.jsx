@@ -37,7 +37,7 @@ export const RoleList = () => {
         },
         {
             name: "Full Name",
-            selector: (row) => row.name+row.title,
+            selector: (row) => row.name+" "+row.title,
             sortable: true
         },
         {
@@ -70,7 +70,7 @@ export const RoleList = () => {
 
     return (
         <>
-            <button className="btn-primary btn btn-sm" onClick={<Finance></Finance>}>Add Role</button>
+            {/* <button className="btn-primary btn btn-sm" onClick={<Finance></Finance>}>Add Role</button> */}
             <DataTable
                 title="Role List"
                 columns={column}
