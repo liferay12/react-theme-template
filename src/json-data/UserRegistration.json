@@ -56,7 +56,7 @@
         {
             "type": "text",
             "id": "userName",
-            "name": "nauserNameme",
+            "name": "screenName",
             "label": "user Name",
             "classes": "col-md-6 form-control",
             "placeholder": "Enter your user name",
@@ -81,7 +81,7 @@
         {
             "type": "email",
             "id": "email",
-            "name": "email",
+            "name": "emailAddress",
             "label": "Enter Email",
             "classes": "col-md-6  form-control",
             "placeholder": "Enter your email address",
@@ -106,7 +106,7 @@
         {
             "type": "password",
             "id": "password",
-            "name": "password",
+            "name": "password_",
             "label": "Enter Password",
             "classes": "col-md-6  form-control",
             "placeholder": "Enter your password",

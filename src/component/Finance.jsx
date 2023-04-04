@@ -2,7 +2,7 @@ import Form from "../library/renderer/FormRenderer";
 import form from '../json-data/Employee.json'
 export const Finance = () => {
     const submitFunc = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
         console.log(event);
     }
     return (

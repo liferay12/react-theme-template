@@ -14,7 +14,7 @@ export const UserList = () => {
 
     useEffect(() => {
         async function fetchUserList() {
-            let user = await axios.get('http://localhost:9090/api/v1/user')
+            let user = await axios.get('http://localhost:8080/api/v1/user')
             console.log("--------" + user);
             setUsers(user.data);
             setFilterUsers(user.data);

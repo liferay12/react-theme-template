@@ -7,15 +7,19 @@ const Form = (props) => {
     const [formData, setFormData] = useState([]);
     // console.log(fieldArray);
     const submit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         let a = [];
-
+        var form = new FormData();
         fieldArray.map((item, index) => {
             console.log('item..', item.value)
             if (item.value != "") {
+                form.append(item.name, item.value);
                 a.push(item.value)
             }
         })
+        console.log("-======= form data===========")
+        console.log(form)
+        props.submit(form);
         setFormData(a)
 
     }
@@ -23,7 +27,7 @@ const Form = (props) => {
         <div className='container Form'>
             <h1>{props.formObject.title}</h1>
             {console.log("Form-Submit data--->", formData)}
-            <form onSubmit={props.submit()}>
+            <form onSubmit={() => { submit() }}>
                 <Renderer fieldArray={fieldArray} setFieldArray={setFieldArray} />
                 <div className='text-center mt-3'>
                     <button type='submit' className='btn btn-primary form-control'>Submit</button>
