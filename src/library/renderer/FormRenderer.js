@@ -10,6 +10,7 @@ const Form = (props) => {
         // e.preventDefault();
         let a = [];
         var form = new FormData();
+        
         fieldArray.map((item, index) => {
             console.log('item..', item.value)
             if (item.value != "") {

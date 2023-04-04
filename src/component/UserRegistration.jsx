@@ -16,20 +16,7 @@ export default function UserRegistration() {
     }
 
     const submitFunc = (formData) => {
-
-
-        console.log("-======= user registration form data===========")
-        // console.log(formData.get('firstName'))
-        // console.log(formData.get('lastName'))
-        // console.log(formData.get('userName'))
-        // console.log(formData.get('email'))
-
-        axios.post('http://localhost:8080/api/v1/user', {
-            data: {
-                'firstName': formData.get('firstName'),
-                'screenName': formData.get('screenName')
-            }
-        })
+        axios.post('http://localhost:8080/api/v1/user', formData)
             .then((response) => {
                 console.log(response.data);
                 toast.success("Your Form has been succesfully submited")

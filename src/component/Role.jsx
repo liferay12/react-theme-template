@@ -1,10 +1,18 @@
 import React from 'react'
 import RoleForm from "../json-data/role.json"
 import Form from '../library/renderer/FormRenderer';
+import toast from 'react-hot-toast';
+import axios from "axios";
 export const Role = () => {
     const submitFunc = (formData) => {
-        // event.preventDefault();
-        console.log("Parent component......"+formData.get('FullName'));
+
+        console.log(formData.get("userName"));
+        axios.post('http://localhost:8080/api/v1/role', formData
+        )
+            .then((response) => {
+                console.log(response.data);
+                toast.success("Your Form has been succesfully submited")
+            });
     }
     return (
         <div className='Home'>

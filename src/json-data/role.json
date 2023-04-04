@@ -5,9 +5,9 @@
     "fields": [
         {
             "type": "text",
-            "id": "fullName",
-            "name": "FullName",
-            "label": "Full Name",
+            "id": "userName",
+            "name": "userName",
+            "label": "User Name",
             "classes": "form-control",
             "placeholder": "Enter your full name",
             "suggestion": "",
@@ -30,9 +30,9 @@
         },
         {
             "type": "text",
-            "id": "userName",
-            "name": "userName",
-            "label": "user Name",
+            "id": "name",
+            "name": "name",
+            "label": "Name",
             "classes": "form-control",
             "placeholder": "Enter your user name",
             "suggestion": "",
@@ -54,12 +54,12 @@
             }
         },
         {
-            "type": "email",
-            "id": "email",
-            "name": "email",
-            "label": "Enter Email",
+            "type": "text",
+            "id": "title",
+            "name": "title",
+            "label": "Enter title",
             "classes": " form-control",
-            "placeholder": "Enter your email address",
+            "placeholder": "Enter your title address",
             "suggestion": "",
             "config": {
                 "disabled": false,
@@ -69,7 +69,7 @@
             },
             "options": [],
             "value": "",
-            "htmlElement": "email",
+            "htmlElement": "title",
             "errorMessage": "",
             "valid": false,
             "validation": {
@@ -79,12 +79,12 @@
             }
         },
         {
-            "type": "mobile",
-            "id": "mobile",
-            "name": "Mobile",
-            "label": "Mobile No",
+            "type": "textarea",
+            "id": "description",
+            "name": "description",
+            "label": "Description",
             "classes": " form-control",
-            "placeholder": "Enter your mobile ",
+            "placeholder": "Enter your description ",
             "suggestion": "",
             "config": {
                 "disabled": false,
@@ -94,7 +94,57 @@
             },
             "options": [],
             "value": "",
-            "htmlElement": "password",
+            "htmlElement": "description",
+            "errorMessage": "",
+            "valid": false,
+            "validation": {
+                "required": true,
+                "maxLength": "",
+                "minLength": ""
+            }
+        },
+        {
+            "type": "text",
+            "id": "type",
+            "name": "type",
+            "label": "Type",
+            "classes": " form-control",
+            "placeholder": "Enter your Type ",
+            "suggestion": "",
+            "config": {
+                "disabled": false,
+                "readOnly": false,
+                "checked": false,
+                "hidden": false
+            },
+            "options": [],
+            "value": "",
+            "htmlElement": "type",
+            "errorMessage": "",
+            "valid": false,
+            "validation": {
+                "required": true,
+                "maxLength": "",
+                "minLength": ""
+            }
+        },
+        {
+            "type": "text",
+            "id": "subType",
+            "name": "subType",
+            "label": "subType",
+            "classes": " form-control",
+            "placeholder": "Enter your subType ",
+            "suggestion": "",
+            "config": {
+                "disabled": false,
+                "readOnly": false,
+                "checked": false,
+                "hidden": false
+            },
+            "options": [],
+            "value": "",
+            "htmlElement": "subType",
             "errorMessage": "",
             "valid": false,
             "validation": {
@@ -103,6 +153,5 @@
                 "minLength": ""
             }
         }
-       
     ]
 }

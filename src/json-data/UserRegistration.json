@@ -55,7 +55,7 @@
         },
         {
             "type": "text",
-            "id": "userName",
+            "id": "screenName",
             "name": "screenName",
             "label": "user Name",
             "classes": "col-md-6 form-control",
