@@ -15,7 +15,8 @@
                 "disabled": false,
                 "readOnly": false,
                 "checked": false,
-                "hidden": false
+                "hidden": false,
+                "pattern":"0-9"
             },
             "options": [],
             "value": "",
@@ -70,31 +71,6 @@
             "options": [],
             "value": "",
             "htmlElement": "title",
-            "errorMessage": "",
-            "valid": false,
-            "validation": {
-                "required": true,
-                "maxLength": "",
-                "minLength": ""
-            }
-        },
-        {
-            "type": "textarea",
-            "id": "description",
-            "name": "description",
-            "label": "Description",
-            "classes": " form-control",
-            "placeholder": "Enter your description ",
-            "suggestion": "",
-            "config": {
-                "disabled": false,
-                "readOnly": false,
-                "checked": false,
-                "hidden": false
-            },
-            "options": [],
-            "value": "",
-            "htmlElement": "description",
             "errorMessage": "",
             "valid": false,
             "validation": {

@@ -16,8 +16,11 @@ export default function UserRegistration() {
     }
 
     const submitFunc = (formData) => {
-        axios.post('http://localhost:8080/api/v1/user', formData)
-            .then((response) => {
+        axios.post('http://localhost:8080/api/v1/user', formData, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then((response) => {
                 console.log(response.data);
                 toast.success("Your Form has been succesfully submited")
             });
