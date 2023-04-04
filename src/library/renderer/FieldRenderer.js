@@ -23,10 +23,6 @@ const Renderer = (props) => {
 
     const fieldChange = (event, field, index) => {
 
-        if(event.target.type==='text'){
-            
-        }
-
         // if (event.target.type) {
 
         // }

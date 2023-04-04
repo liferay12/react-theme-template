@@ -16,12 +16,13 @@
                 "readOnly": false,
                 "checked": false,
                 "hidden": false,
-                "pattern":"0-9"
+                "pattern":"",
+                "error":""
             },
             "options": [],
             "value": "",
             "htmlElement": "text",
-            "errorMessage": "",
+            "errorMessage": "PLease Coorect it",
             "valid": false,
             "validation": {
                 "required": true,

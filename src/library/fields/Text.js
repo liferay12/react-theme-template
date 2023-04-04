@@ -16,9 +16,11 @@ const Text = (props) => {
                 disabled={props.fieldConfig.config.disabled}
                 readOnly={props.fieldConfig.config.readOnly}
                 hidden={props.fieldConfig.config.hidden}
-                pattern={`'[${props.fieldConfig.config.hidden}]'`}
+                
+                required={props.fieldConfig.validation.required}
+                
             />
-            {/* <p style={{ color: 'red' }}>This field is required</p> */}
+            {/* <p style={{ color: 'red' }}>{props.fieldConfig.errorMessage}</p> */}
         </div>
     );
 }
