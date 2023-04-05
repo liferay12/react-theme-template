@@ -20,9 +20,13 @@
             "options": [],
             "value": "",
             "htmlElement": "text",
-            "errorMessage": "",
             "valid": false,
             "validation": {
+                "required": true,
+                "maxLength": "",
+                "minLength": ""
+            },
+            "errorMessage": {
                 "required": true,
                 "maxLength": "",
                 "minLength": ""
@@ -45,9 +49,13 @@
             "options": [],
             "value": "",
             "htmlElement": "text",
-            "errorMessage": "",
             "valid": false,
             "validation": {
+                "required": true,
+                "maxLength": "",
+                "minLength": ""
+            },
+            "errorMessage": {
                 "required": true,
                 "maxLength": "",
                 "minLength": ""
@@ -70,9 +78,13 @@
             "options": [],
             "value": "",
             "htmlElement": "text",
-            "errorMessage": "",
             "valid": false,
             "validation": {
+                "required": true,
+                "maxLength": "",
+                "minLength": ""
+            },
+            "errorMessage": {
                 "required": true,
                 "maxLength": "",
                 "minLength": ""
@@ -95,10 +107,14 @@
             "options": [],
             "value": "",
             "htmlElement": "email",
-            "errorMessage": "",
             "valid": false,
             "validation": {
                 "required": true,
+                "maxLength": "",
+                "minLength": ""
+            },
+            "errorMessage": {
+                "required": "This field is required",
                 "maxLength": "",
                 "minLength": ""
             }
@@ -120,9 +136,13 @@
             "options": [],
             "value": "",
             "htmlElement": "password",
-            "errorMessage": "",
             "valid": false,
             "validation": {
+                "required": true,
+                "maxLength": "",
+                "minLength": ""
+            },
+            "errorMessage": {
                 "required": true,
                 "maxLength": "",
                 "minLength": ""

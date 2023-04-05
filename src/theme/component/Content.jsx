@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { UrlProtect } from "../Service/UrlProtect";
+import { RequestProcessor } from "../Service/RequestProcessor";
 import { Login } from "./Login";
 import { SignIn } from "./SignIn";
 import { SignUp } from "./SignUp";
@@ -14,7 +14,7 @@ export const Content = (props) => {
 
           exact
           path={'/login'}
-          element={<UrlProtect Component={Login} />}
+          element={<RequestProcessor Component={Login} />}
         />
         {/*
         <Route
@@ -34,7 +34,7 @@ export const Content = (props) => {
                         key={j}
                         exact
                         path={subItem.path}
-                        element={<UrlProtect Component={subItem.subComponent} />}
+                        element={<RequestProcessor Component={subItem.subComponent} />}
                       />
 
                     </>
@@ -44,7 +44,7 @@ export const Content = (props) => {
                     key={i}
                     exact
                     path={item.path}
-                    element={<UrlProtect Component={item.component} />}
+                    element={<RequestProcessor Component={item.component} />}
                   />
                 )}
               </>

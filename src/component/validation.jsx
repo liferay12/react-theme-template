@@ -4,12 +4,13 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
 
 export default function Validation() {
-  const yupValidation = Yup.object().shape({
+  const validate = {
     name: Yup.string()
       .required('Please enter some value.')
       .min(4, 'Add minimum 4 characters'),
     email: Yup.string().required('Email id is mendatory').email(),
-  })
+  };
+  const yupValidation = Yup.object().shape(validate)
   const formOptions = { resolver: yupResolver(yupValidation) }
   const { register, handleSubmit, reset, formState } = useForm(formOptions)
   const { errors } = formState

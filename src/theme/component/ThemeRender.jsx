@@ -10,7 +10,7 @@ import TopbarConfig from "../TopbarConfig";
 import $ from "jquery"
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { UrlProtect } from "../Service/UrlProtect";
+import { UrlProtect } from "../Service/RequestProcessor";
 import { Login } from "./Login";
 import { SignUp } from "./SignUp";
 const ThemeRender = (props) => {
