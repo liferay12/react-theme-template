@@ -21,7 +21,7 @@ const Otp = (props) => {
                 numInputs={props.fieldConfig.numInputs}
                 shouldAutoFocus={props.fieldConfig.shouldAutoFocus}
                 onChange={handleChange}
-                inputStyle={{border:'revert'}}
+                inputStyle={{border:'revert',width:"2rem"}}
                 separator={<span>:</span>}
             />
         </div>

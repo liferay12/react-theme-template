@@ -33,7 +33,7 @@
             "id": "country",
             "name": "country",
             "label": "Country",
-            "classes": " form-control",
+            "classes": "",
             "placeholder": "Select Country",
             "suggestion": "Select a country from the dropdown",
             "config": {
@@ -311,80 +311,6 @@
                 "maxLength": "",
                 "minLength": ""
             }
-        }
-    ],
-    "data": [
-        {
-            "id": "1",
-            "name": "Urvashi",
-            "country": "India",
-            "address": "Meerut,up",
-            "age": "22",
-            "dateOfJoining": "3-03-2022",
-            "reporting": "HR",
-            "resume": "upload",
-            "gender": "female",
-            "termsAndConditions": "Agreed"
-        },
-        {
-            "id": "2",
-            "name": "Ashwani",
-            "country": "India",
-            "address": "Noida,up",
-            "age": "25",
-            "dateOfJoining": "27-01-2022",
-            "reporting": "HR",
-            "resume": "upload",
-            "gender": "male",
-            "termsAndConditions": "Agreed"
-        },
-        {
-            "id": "3",
-            "name": "Divya",
-            "country": "India",
-            "address": "Noida,up",
-            "age": "25",
-            "dateOfJoining": "27-01-2022",
-            "reporting": "HR",
-            "resume": "upload",
-            "gender": "female",
-            "termsAndConditions": "Agreed"
-        },
-        {
-            "id": "4",
-            "name": "Aparana",
-            "country": "India",
-            "address": "Noida,up",
-            "age": "22",
-            "dateOfJoining": "27-01-2022",
-            "reporting": "HR",
-            "resume": "upload",
-            "gender": "female",
-            "termsAndConditions": "Agreed"
-        },
-        {
-            "id": "3333",
-            "name": "Ram",
-            "country": "India",
-            "address": "New Delhi",
-            "age": "25",
-            "dateOfJoining": "14-06-2022",
-            "reporting": "HR",
-            "resume": "upload",
-            "gender": "male",
-            "termsAndConditions": "Agreed"
-        },
-        {
-            "id": "6",
-            "name": "Jaskirat",
-            "country": "Africa",
-            "address": "Africa",
-            "age": "25",
-            "dateOfJoining": "04-07-2022",
-            "reporting": "HR",
-            "resume": "upload",
-            "gender": "male",
-            "termsAndConditions": "Agreed"
         }
     ]
 }

@@ -30,7 +30,7 @@ const DateTime = (props) => {
                     maxDate={props.fieldConfig.validation.maxDate}
                     minDate={props.fieldConfig.validation.minDate}
                     format={props.fieldConfig.validation.format}
-                   onChange={props.changed}
+                    onChange={props.changed}
 //                   value={date}
                    // onChange={(date) => setDate(date)}
                 />

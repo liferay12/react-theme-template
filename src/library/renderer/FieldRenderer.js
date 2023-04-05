@@ -22,11 +22,6 @@ const Renderer = (props) => {
     const { fieldArray, setFieldArray } = props;
 
     const fieldChange = (event, field, index) => {
-
-        // if (event.target.type) {
-
-        // }
-
         setFieldArray(prev => prev.map((item, idx) => {
             if (index === idx) {
                 if (field.type === 'select') {
@@ -50,7 +45,7 @@ const Renderer = (props) => {
             case 'checkbox': element = (<CheckBox key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
             case 'number': element = (<Number key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
             case 'file': element = (<File key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'date': element = (<Date key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
+            case 'date': element = (<Date key={field.id} fieldConfig={field} changed={(event) =>  fieldChange(event, field, index)} />); break;
             case 'radio': element = (<Radio key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
             case 'autocomplete': element = (<AutoComplete key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
             case 'email': element = (<Email key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
@@ -68,7 +63,7 @@ const Renderer = (props) => {
         <div className='mt-3'>
             {
                 fieldArray.map((field, index) => (
-                    <div key={`${field.id}_${index}`}>
+                    <div  key={`${field.id}_${index}`}>
                         {setField(field, index)}
                     </div>
                 ))

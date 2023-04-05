@@ -8,7 +8,7 @@ const Tel = (props) => {
         <div className='form-group mt-3'>
             <label htmlFor={props.fieldConfig.id}>{props.fieldConfig.label}</label>
             <PhoneInput
-                country={'us'}
+                country={'in'}
                 id={props.fieldConfig.id}
                 name={props.fieldConfig.name}
                 placeholder={props.fieldConfig.placeholder}

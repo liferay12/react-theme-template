@@ -32,7 +32,7 @@
             }
         },
         {
-            "type": "text",
+            "type": "email",
             "id": "name",
             "name": "name",
             "label": "Name",

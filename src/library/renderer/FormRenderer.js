@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Renderer from './FieldRenderer';
-import handlesumbit from '../../component/handlesubit';
 
 const Form = (props) => {
     const { formObject } = props;
@@ -28,7 +27,7 @@ const Form = (props) => {
         <div className='container Form'>
             <h3 className='text-center'>{props.formObject.title}</h3>
             {console.log("Form-Submit data--->", formData)}
-            <form onSubmit={() => { handlesumbit(submit) }}>
+            <form onSubmit={() => { submit() }}>
                 <Renderer fieldArray={fieldArray} setFieldArray={setFieldArray} />
                 <div className='text-center m-3'>
                     <button type='submit' className='btn btn-lg btn-primary '>Submit</button>
