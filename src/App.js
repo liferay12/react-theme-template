@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import $ from "jquery";
 import ThemeRender from "./theme/component/ThemeRender";
-import sideNavJSON from "./theme/LeftNavigation";
+import sideNavJSON from "./json-data/LeftNavigation";
 import { useEffect } from "react";
 import { W3Crm } from "./theme/js/custom";
 import { EmailService } from "./theme/Service/EmailService";

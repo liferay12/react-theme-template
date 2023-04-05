@@ -6,7 +6,7 @@ import { Topbar } from "./TopBar";
 import "font-awesome/css/font-awesome.min.css";
 import BreadCrumb from "./BreadCrumb";
 import { Content } from "./Content";
-import TopbarConfig from "../TopbarConfig";
+import TopbarConfig from "../../json-data/TopbarConfig";
 import $ from "jquery"
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";

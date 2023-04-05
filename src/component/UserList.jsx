@@ -4,9 +4,15 @@ import axios from "axios";
 import { useEffect } from "react";
 import DataTable from 'react-data-table-component';
 import { useDownloadExcel } from 'react-export-table-to-excel';
+import { ModalPopup } from './ModalPopup';
+import { Button, Modal } from 'react-bootstrap';
+import UserRegistration from './UserRegistration';
 
 export const UserList = () => {
+    const [show, setShow] = useState(false);
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const [users, setUsers] = useState([]);
     const [search, setSearch] = useState("");
@@ -20,16 +26,21 @@ export const UserList = () => {
             setFilterUsers(user.data);
         };
         fetchUserList();
-        
+
     }, []);
 
     useEffect(() => {
         const result = users.filter(user => {
-            return user.screenName.toLowerCase().match(search.toLowerCase());
+            return user.firstName.toLowerCase().match(search.toLowerCase());
         })
         setFilterUsers(result);
         console.log("-------++++------" + users);
     }, [search]);
+
+    //    const openEditor=()=>{
+    //         alert("inside open editor");
+    //         <ModalPopup ></ModalPopup>
+    //     }
 
     const column = [
         {
@@ -39,7 +50,7 @@ export const UserList = () => {
         },
         {
             name: "Full Name",
-            selector: (row) => row.firstName+" "+row.lastName,
+            selector: (row) => row.firstName + " " + row.lastName,
             sortable: true
         },
         {
@@ -59,7 +70,7 @@ export const UserList = () => {
         },
         {
             name: "Actions",
-            cell: row => <button className="btn btn-primary" onClick={() => alert(row.screenName)}>Edit</button>
+            cell: row => <button className="btn btn-primary" onClick={handleShow}>Edit</button>
         }
     ];
 
@@ -96,6 +107,27 @@ export const UserList = () => {
                     />}
                 subHeaderAlign="left"
             />
+
+            <Modal
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                keyboard={false}
+                className='modal-lg'
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className='text-center'>Edit User</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <UserRegistration></UserRegistration>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    {/* <Button variant="primary">Understood</Button> */}
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }
