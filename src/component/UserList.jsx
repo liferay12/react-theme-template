@@ -23,13 +23,13 @@ export const UserList = () => {
         
     }, []);
 
-    // useEffect(() => {
-    //     const result = users.filter(user => {
-    //         return user.name.toLowerCase().match(search.toLowerCase());
-    //     })
-    //     setFilterUsers(result);
-    //     console.log("-------++++------" + users);
-    // }, [search]);
+    useEffect(() => {
+        const result = users.filter(user => {
+            return user.screenName.toLowerCase().match(search.toLowerCase());
+        })
+        setFilterUsers(result);
+        console.log("-------++++------" + users);
+    }, [search]);
 
     const column = [
         {
@@ -38,8 +38,8 @@ export const UserList = () => {
             sortable: true
         },
         {
-            name: "First Name",
-            selector: (row) => row.firstName+row.lastName,
+            name: "Full Name",
+            selector: (row) => row.firstName+" "+row.lastName,
             sortable: true
         },
         {
@@ -72,11 +72,11 @@ export const UserList = () => {
 
     return (
         <>
-            <div>hello {users.screenName}</div>
+            {/* <div>hello {users.screenName}</div> */}
             <DataTable
                 title="User List"
                 columns={column}
-                data={users}
+                data={FilterUsers}
                 pagination
                 fixedHeader
                 fixedHeaderScrollHeight="25rem"

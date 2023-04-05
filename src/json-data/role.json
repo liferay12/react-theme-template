@@ -15,19 +15,20 @@
                 "disabled": false,
                 "readOnly": false,
                 "checked": false,
-                "hidden": false,
-                "pattern":"",
-                "error":""
+                "hidden": false
+                
             },
             "options": [],
             "value": "",
             "htmlElement": "text",
-            "errorMessage": "PLease Coorect it",
+            "errorMessage": "Please Correct it",
             "valid": false,
             "validation": {
                 "required": true,
                 "maxLength": "",
-                "minLength": ""
+                "minLength": "",
+                "autocomplete":"on",
+                "autofocus":true
             }
         },
         {

@@ -13,6 +13,7 @@ import Employee  from '../component/Employee';
 import UserRegistration from "../component/UserRegistration";
 import { Role } from "../component/Role";
 import { RoleList } from "../component/RoleList";
+import Validation from "../component/validation";
 
 const section = [
   {
@@ -234,8 +235,8 @@ const section = [
           {
             icon: "icon-float",
             name: "float",
-            path: "/float",
-            subComponent: Test,
+            path: "/validation",
+            subComponent: Validation,
           },
           {
             icon: "icon-morris",

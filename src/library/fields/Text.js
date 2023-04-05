@@ -2,25 +2,50 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import 'jquery/dist/jquery';
+import * as Yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form'
 const Text = (props) => {
+
+    const yupValidation = Yup.object().shape({
+        names: Yup.string()
+          .required(props.fieldConfig.errorMessage)
+          .min(4, 'Add minimum 4 characters')
+      })
+    const formOptions = { resolver: yupResolver(yupValidation) }
+    const { register, formState } = useForm(formOptions)
+    const { errors } = formState
+    function onSubmit(data) {
+        console.log(JSON.stringify(data, null, 4))
+        return false
+      }
+
+
     return (
         <div className='form-group mt-3'>
             <label htmlFor={props.fieldConfig.id}>{props.fieldConfig.label}</label>
-            <input
+            <input onBlur={onSubmit}
                 type={props.fieldConfig.type}
-                className={props.fieldConfig.classes}
                 name={props.fieldConfig.name}
+                className={(props.fieldConfig.classes) + (`${errors.names ? 'is-invalid' : ''}`)}
+                {...register(props.fieldConfig.name)}
+                
                 id={props.fieldConfig.id}
                 placeholder={props.fieldConfig.placeholder}
                 onChange={props.changed}
                 disabled={props.fieldConfig.config.disabled}
                 readOnly={props.fieldConfig.config.readOnly}
                 hidden={props.fieldConfig.config.hidden}
-                
-                required={props.fieldConfig.validation.required}
+                pattern={props.fieldConfig.validation.pattern}
+                //required={props.fieldConfig.validation.required}
+                maxLength={props.fieldConfig.validation.maxLength}
+                minLength={props.fieldConfig.validation.minLength}
+                autocomplete={props.fieldConfig.validation.autocomplete}
+                autofocus={props.fieldConfig.validation.autofocus}
                 
             />
-            {/* <p style={{ color: 'red' }}>{props.fieldConfig.errorMessage}</p> */}
+            <div className="invalid-feedback">{errors.name?.message}</div>
+            {/* <p style={{ color: 'red' }}>This field is required</p> */}
         </div>
     );
 }

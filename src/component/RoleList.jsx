@@ -19,8 +19,8 @@ export const RoleList = () => {
     }, []);
 
     useEffect(() => {
-        const result = roles.filter(user => {
-            return user.name.toLowerCase().match(search.toLowerCase());
+        const result = roles.filter(role => {
+            return role.name.toLowerCase().match(search.toLowerCase());
         })
         setFilterroles(result);
         console.log("-------++++------" + roles);
@@ -70,7 +70,7 @@ export const RoleList = () => {
             <DataTable
                 title="Role List"
                 columns={column}
-                data={roles}
+                data={Filterroles}
                 pagination
                 fixedHeader
                 fixedHeaderScrollHeight="25rem"
