@@ -17,7 +17,7 @@
                 "checked": false,
                 "hidden": false
             },
-            "options": [],
+            "provider": "https://jsonplaceholder.typicode.com/posts/1/comments",
             "value": "",
             "htmlElement": "text",
             "valid": false,
@@ -46,7 +46,7 @@
                 "checked": false,
                 "hidden": false
             },
-            "options": [],
+            "provider": "url",
             "value": "",
             "htmlElement": "text",
             "valid": false,
@@ -75,7 +75,7 @@
                 "checked": false,
                 "hidden": false
             },
-            "options": [],
+            "provider": "url",
             "value": "",
             "htmlElement": "text",
             "valid": false,
@@ -104,7 +104,7 @@
                 "checked": false,
                 "hidden": false
             },
-            "options": [],
+            "provider": "url",
             "value": "",
             "htmlElement": "email",
             "valid": false,
@@ -133,7 +133,7 @@
                 "checked": false,
                 "hidden": false
             },
-            "options": [],
+            "provider": "url",
             "value": "",
             "htmlElement": "password",
             "valid": false,

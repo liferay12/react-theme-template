@@ -36,6 +36,7 @@ const Renderer = (props) => {
         }));
     }
 
+
     const setField = (field, index) => {
         let element = <></>;
         switch (field.type) {
@@ -45,7 +46,7 @@ const Renderer = (props) => {
             case 'checkbox': element = (<CheckBox key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
             case 'number': element = (<Number key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
             case 'file': element = (<File key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'date': element = (<Date key={field.id} fieldConfig={field} changed={(event) =>  fieldChange(event, field, index)} />); break;
+            case 'date': element = (<Date key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
             case 'radio': element = (<Radio key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
             case 'autocomplete': element = (<AutoComplete key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
             case 'email': element = (<Email key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
@@ -62,8 +63,10 @@ const Renderer = (props) => {
     return (
         <div className='mt-3'>
             {
+
                 fieldArray.map((field, index) => (
-                    <div  key={`${field.id}_${index}`}>
+                    <div key={`${field.id}_${index}`}>
+                        <p>v : {field.value}</p>
                         {setField(field, index)}
                     </div>
                 ))

@@ -11,21 +11,13 @@ export const Role = () => {
         console.log(formData.get("title"));
         console.log(formData.get("type"));
         console.log(formData.get("subType"));
-        axios.post('http://localhost:8080/api/v1/role', formData, {
-            headers: {
-                "Content-Type": "application/json"
-            },
-        }).then((response) => {
-            console.log(response.data);
-            toast.success("Your Form has been succesfully submited")
-        });
+
     }
     return (
         <div className='Home'>
             <div className='row'>
                 <div className='col-md-6 offset-md-3 card'>
-
-                    <Form formObject={RoleForm} submit={(formData) => submitFunc(formData)} />
+                    <Form formObject={RoleForm} data={''} url={'http://localhost:8080/api/v1/role'} />
                 </div>
             </div>
         </div>

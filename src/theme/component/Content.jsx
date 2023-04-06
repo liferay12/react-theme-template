@@ -16,6 +16,7 @@ export const Content = (props) => {
           path={'/login'}
           element={<RequestProcessor Component={Login} />}
         />
+
         {/*
         <Route
 
@@ -23,6 +24,7 @@ export const Content = (props) => {
           path={'/signup'}
           element={<UrlProtect Component={SignUp} />}
         /> */}
+        
         {props.data.map((section) => (
           <>
             {section.option.map((item, i) => (
