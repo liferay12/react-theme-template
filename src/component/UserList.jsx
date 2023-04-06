@@ -11,9 +11,15 @@ import UserRegistration from './UserRegistration';
 export const UserList = () => {
     const [show, setShow] = useState(false);
 
+    const [editrow, setEditrow] = useState();
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
+    const handleShow = (cell) => {
+        setShow(true);
+        setEditrow(cell);
+        //console.log("editable data handleshow "+editrow);
+    }
+    console.log("editable data "+editrow);
     const [users, setUsers] = useState([]);
     const [search, setSearch] = useState("");
     const [FilterUsers, setFilterUsers] = useState([]);
@@ -21,7 +27,6 @@ export const UserList = () => {
     useEffect(() => {
         async function fetchUserList() {
             let user = await axios.get('http://localhost:8080/api/v1/user')
-            console.log("--------" + user);
             setUsers(user.data);
             setFilterUsers(user.data);
         };
@@ -34,7 +39,6 @@ export const UserList = () => {
             return user.firstName.toLowerCase().match(search.toLowerCase());
         })
         setFilterUsers(result);
-        console.log("-------++++------" + users);
     }, [search]);
 
     //    const openEditor=()=>{
@@ -70,7 +74,7 @@ export const UserList = () => {
         },
         {
             name: "Actions",
-            cell: row => <button className="btn btn-primary" onClick={handleShow}>Edit</button>
+            cell: (row)  => <button className="btn btn-primary" onClick={() => handleShow(row.userId)}>Edit</button>
         }
     ];
 
@@ -119,7 +123,7 @@ export const UserList = () => {
                     <Modal.Title className='text-center'>Edit User</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <UserRegistration></UserRegistration>
+                    <UserRegistration data={editrow}></UserRegistration>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
