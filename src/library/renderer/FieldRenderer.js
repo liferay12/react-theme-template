@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Select from '../fields/Select';
 import Text from '../fields/Text';
 import TextArea from '../fields/TextArea';
@@ -19,8 +19,8 @@ import 'bootstrap/dist/js/bootstrap';
 import 'jquery/dist/jquery';
 
 const Renderer = (props) => {
-    const { fieldArray, setFieldArray } = props;
-
+    const [fieldArray, setFieldArray] = useState([]);
+    let a;
     const fieldChange = (event, field, index) => {
         setFieldArray(prev => prev.map((item, idx) => {
             if (index === idx) {
@@ -36,6 +36,25 @@ const Renderer = (props) => {
         }));
     }
 
+
+    useEffect(() => {
+        // let a = [];
+        // props.fieldArray.map((item) => {
+        //     console.log("_____________________")
+        //     let b = item.name
+        //     if (item.name === props.fieldData[item.name]) {
+        //         console.log("matched..")
+        //         item.value = "rao"
+        //     }
+        //     else {
+        //         item.value = "";
+        //     }
+        //     a.push(item);
+        // })
+
+        setFieldArray(props.fieldArray)
+        // console.log(a[0])
+    }, []);
 
     const setField = (field, index) => {
         let element = <></>;
@@ -66,7 +85,6 @@ const Renderer = (props) => {
 
                 fieldArray.map((field, index) => (
                     <div key={`${field.id}_${index}`}>
-                        <p>v : {field.value}</p>
                         {setField(field, index)}
                     </div>
                 ))

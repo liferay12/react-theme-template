@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { RequestProcessor } from "../Service/RequestProcessor";
 import { Login } from "./Login";
 import { SignIn } from "./SignIn";
-import { SignUp } from "./SignUp";
+
 
 
 export const Content = (props) => {
@@ -19,7 +19,6 @@ export const Content = (props) => {
 
         {/*
         <Route
-
           exact
           path={'/signup'}
           element={<UrlProtect Component={SignUp} />}

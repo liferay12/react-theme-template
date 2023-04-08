@@ -34,6 +34,7 @@ const Text = (props) => {
                 className={props.fieldConfig.classes}
                 placeholder={props.fieldConfig.placeholder}
                 onChange={props.changed}
+                value={props.fieldConfig.value}
                 disabled={props.fieldConfig.config.disabled}
                 readOnly={props.fieldConfig.config.readOnly}
                 hidden={props.fieldConfig.config.hidden}

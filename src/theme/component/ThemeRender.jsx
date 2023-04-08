@@ -32,7 +32,7 @@ const ThemeRender = (props) => {
     }
 
   }
-  console.log("======" + props.data.section);
+  console.log("======" + props.sideBarJSON);
   return (
     <>
 
@@ -60,8 +60,8 @@ const ThemeRender = (props) => {
 
             <SideBarToggle></SideBarToggle>
             <ChatBox></ChatBox>
-            <Topbar data={TopbarConfig}></Topbar>
-            <SideBar themeData={props.data} themeModeFun={handleConverterTheme}></SideBar>
+            <Topbar data={props.topbarJSON}></Topbar>
+            <SideBar themeData={props.sideBarJSON} themeModeFun={handleConverterTheme}></SideBar>
 
 
 
@@ -69,7 +69,7 @@ const ThemeRender = (props) => {
               <BreadCrumb ></BreadCrumb>
               <div class="container-fluid">
                 <div class="row">
-                  <Content data={props.data}></Content>
+                  <Content data={props.sideBarJSON}></Content>
                 </div>
               </div>
             </div>

@@ -29,7 +29,7 @@ function BreadCrumb() {
 					</li>
 
 					<li class="breadcrumb-item active">{
-					crumbs!=""?(crumbs):('Dashboard')
+						crumbs != "" ? (crumbs) : ('Dashboard')
 					}</li>
 
 				</ol>

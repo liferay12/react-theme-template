@@ -6,23 +6,21 @@ import axios from "axios";
 
 export default function UserRegistration() {
 
-
-    let userData = "";
+    const [userData, setUserData] = useState({});
     useEffect(() => {
         fetchUser();
     }, []);
     async function fetchUser() {
-        userData = await axios.get(`http://localhost:8080/api/v1/user/1`);
-        console.log(userData)
+        let data = await axios.get(`http://localhost:8080/api/v1/user/1`);
+        let editData = data.data;
+        setUserData(editData)
     };
 
     return (
         <div className='Home'>
             <div className='row'>
                 <div className='col-md-6 offset-md-3 card'>
-
-                    <Form formObject={userRegistration} data={userData} url={'http://localhost:8080/api/v1/user/1'} />
-
+                    <Form formObject={userRegistration} editData={userData} url={'http://localhost:8080/api/v1/user/1'} />
                 </div>
             </div>
         </div>

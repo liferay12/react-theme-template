@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { W3Crm } from "./theme/js/custom";
 import { EmailService } from "./theme/Service/EmailService";
 import Home from "./component/Home";
+import  topbarJSON from "./json-data/TopbarConfig"
 
 import toast, { Toaster } from 'react-hot-toast';
 function App() {
@@ -17,7 +18,7 @@ function App() {
   return (
     <>
       <Toaster position="left" reverseOrder={false} />
-      <ThemeRender data={sideNavJSON}></ThemeRender>;
+      <ThemeRender sideBarJSON={sideNavJSON} topbarJSON={topbarJSON}></ThemeRender>;
 
     </>
   );
