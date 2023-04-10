@@ -36,9 +36,7 @@ const Renderer = (props) => {
         }));
     }
     const initializeForm = () => {
-        console.log("*********************")
         if (props.d !== "" && props.d != undefined && Object.keys(props.d).length != 0) {
-            console.log("********************* 2")
             let keys = Object.keys(props.d);
             keys.map((item, index) => {
                 props.fieldArray.map((fItem, index) => {
