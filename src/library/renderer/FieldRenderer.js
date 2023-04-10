@@ -19,7 +19,7 @@ import 'bootstrap/dist/js/bootstrap';
 import 'jquery/dist/jquery';
 
 const Renderer = (props) => {
-    const [fieldArray, setFieldArray] = useState([]);
+    const [fieldArray, setFieldArray] = useState(props.fieldArray);
     let a;
     const fieldChange = (event, field, index) => {
         setFieldArray(prev => prev.map((item, idx) => {
@@ -35,26 +35,16 @@ const Renderer = (props) => {
             return item;
         }));
     }
-
-
-    useEffect(() => {
-        // let a = [];
-        // props.fieldArray.map((item) => {
-        //     console.log("_____________________")
-        //     let b = item.name
-        //     if (item.name === props.fieldData[item.name]) {
-        //         console.log("matched..")
-        //         item.value = "rao"
-        //     }
-        //     else {
-        //         item.value = "";
-        //     }
-        //     a.push(item);
-        // })
-
-        setFieldArray(props.fieldArray)
-        // console.log(a[0])
-    }, []);
+    const initializeForm = () => {
+        let keys = Object.keys(props.d);
+        keys.map((item, index) => {
+            props.fieldArray.map((fItem, index) => {
+                if (fItem.name === item) {
+                    fItem.value = props.d[item];
+                }
+            });
+        });
+    }
 
     const setField = (field, index) => {
         let element = <></>;
@@ -78,11 +68,10 @@ const Renderer = (props) => {
         }
         return element;
     }
-
+    initializeForm();
     return (
         <div className='mt-3'>
             {
-
                 fieldArray.map((field, index) => (
                     <div key={`${field.id}_${index}`}>
                         {setField(field, index)}

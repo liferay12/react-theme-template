@@ -20,6 +20,7 @@ export default function UserRegistration() {
         <div className='Home'>
             <div className='row'>
                 <div className='col-md-6 offset-md-3 card'>
+                    
                     <Form formObject={userRegistration} editData={userData} url={'http://localhost:8080/api/v1/user/1'} />
                 </div>
             </div>

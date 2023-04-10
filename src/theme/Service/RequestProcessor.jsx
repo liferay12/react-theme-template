@@ -14,7 +14,6 @@ export const RequestProcessor = (props) => {
 
     return (
         <div>
-
             <Component />
         </div>
     )

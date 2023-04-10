@@ -28,15 +28,13 @@ const Form = (props) => {
             console.error(err);
             toast.error("Opps ! Something went wrong")
         })
-
-
-
     }
     return (
         <div className='container Form'>
             <h3 className='text-center'>{props.formObject.title}</h3>
             <form onSubmit={(event) => { submit(event) }}>
-                <Renderer fieldArray={fieldArray} fieldData={props.editData} setFieldArray={setFieldArray} />
+            
+                <Renderer fieldArray={fieldArray} d={props.editData} setFieldArray={setFieldArray} />
                 <div className='text-center m-3 mb-2'>
                     <button type='submit' className='btn btn-lg btn-primary '>Submit</button>
                 </div>
