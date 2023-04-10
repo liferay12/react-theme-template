@@ -26,6 +26,24 @@
     },
     {
         "name": "Actions",
-        "cell": "edit"
+        "cell": [
+            {
+                "name": "edit",
+                "lebel":"Edit",
+                "icon": "fa fa-pencil",
+                "class":
+            },
+            {
+                "name": "delete",
+                "lebel":"Edit",
+                "icon": "fa fa-trash"
+            },
+            {
+                "name": "update",
+                "lebel":"Edit",
+                "icon": ""
+            }
+        ]
+        
     }
 ]

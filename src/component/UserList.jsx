@@ -11,11 +11,46 @@ import columns from '../json-data/DataTableColumns.json';
 
 export const UserList = () => {
     const [show, setShow] = useState(false);
-    const [column, setColumn] = useState(columns);
+    const [column, setColumn] = useState([]);
     const [editrow, setEditrow] = useState();
     const handleClose = () => setShow(false);
 
+    const [buttons, setButtons] = useState([]);
 
+    useEffect(() => {
+        const fetchedButtons = [];
+        columns.map((item, index) => {
+            if (item.name === "Actions" && item.cell.length !== 0) {
+                fetchedButtons.push({
+                    "name": "Actions", cell: (row) => (<>
+                        {item.cell.map((i) => {
+                            if (i.name === "edit") {
+                                return (
+                                    <button className="btn btn-sm btn-primary" onClick={() => alert(row.userId)}><i class="fa fa-pencil"></i></button>
+                                )
+                            } else if (i.name === "delete") {
+                                return (
+                                    <button className="btn btn-sm btn-danger" onClick={() => alert(row.screenName)}><i class="fa fa-trash"></i></button>
+                                )
+                            } else {
+                                return (
+                                    <button className="btn btn-sm btn-warrnning" onClick={() => alert(row.screenName)}><i class={i.icon}></i>{i.name}</button>
+                                )
+                            }
+                        })
+
+
+                        }
+                    </>)
+
+                })
+            } else {
+                console.log(item.sortable + "...." + item.selector, " : ", item.name)
+                fetchedButtons.push(item);
+            }
+        });
+        setColumn(fetchedButtons);
+    }, []);
 
     const handleShow = (cell) => {
         setShow(true);
@@ -39,7 +74,7 @@ export const UserList = () => {
 
     useEffect(() => {
         const result = users.filter(user => {
-            return user.firstName.toLowerCase().match(search.toLowerCase());
+            return null; //user.firstName.toLowerCase().match(search.toLowerCase());
         })
         setFilterUsers(result);
     }, [search]);
@@ -54,22 +89,6 @@ export const UserList = () => {
 
     return (
         <>
-            <div>
-                {users}
-                {
-                    Object.keys(users.object).map((key, i) => (
-                        <>
-                            <p key={i}>
-                                <span>Key Name: {key}</span>
-                                <span>Value: {users.object[key]}</span>
-                            </p>
-                            <button key={i} className="btn btn-primary" onClick={() => alert("users.screenName")}>Edit</button>
-
-                        </>
-                    ))
-                }
-            </div>
-            {/* <div>hello {users.screenName}</div> */}
             <DataTable
                 title="User List"
                 columns={column}

@@ -39,22 +39,28 @@ export const RoleList = () => {
         },
         {
             name: "Screen Name",
-            selector: (row) => row.userName,
+            selector: "userName",
             sortable: true
         },
         {
             name: "Type",
-            selector: (row) => row.type,
+            selector: "type",
             sortable: true
         },
         {
             name: "Company Id",
-            selector: (row) => row.userId,
+            selector: "userId",
             sortable: true
         },
         {
             name: "Actions",
-            cell: row => <button className="btn btn-primary" onClick={() => alert(row.screenName)}>Edit</button>
+            cell: (row) => (
+                <>
+                    <button className="btn btn-sm btn-primary" onClick={() => alert(row.screenName)}><i class="fa fa-pencil"></i></button>
+                    <button className="btn btn-sm btn-danger" onClick={() => alert("row.screenName")}><i class="fa fa-trash"></i></button>
+                </>
+            )
+            
         }
     ];
 
