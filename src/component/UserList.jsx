@@ -8,21 +8,21 @@ import { ModalPopup } from './ModalPopup';
 import { Button, Modal } from 'react-bootstrap';
 import UserRegistration from './UserRegistration';
 import columns from '../json-data/DataTableColumns.json';
+import { Delete } from './Delete';
 
 export const UserList = () => {
     const [show, setShow] = useState(false);
     const [column, setColumn] = useState([]);
     const [editrow, setEditrow] = useState();
+    const [events, setEvents] = useState();
     const handleClose = () => setShow(false);
 
-    const handleShow = (cell) => {
+    const handleShow = (id, name) => {
         setShow(true);
-        setEditrow(cell);
-        //console.log("editable data handleshow "+editrow);
+        setEditrow(id);
+        setEvents(name);
+        addUser();
     }
-
-    // const [buttons, setButtons] = useState([]);
-
     useEffect(() => {
         const fetchedButtons = [];
         columns.map((item, index) => {
@@ -31,7 +31,7 @@ export const UserList = () => {
                     "name": "Actions", cell: (row) => (<>
                         {item.cell.map((i) => {
                             return (
-                                <button className={i.class} onClick={() => (handleShow(row.userId))}><i class={i.icon} aria-hidden="true">{i.lebel}</i></button>
+                                <button className={i.class} onClick={() => (handleShow(row.userId, i.name))}><i class={i.icon} aria-hidden="true">{i.lebel}</i></button>
                             )
                             // if (i.name === "edit") {
                             //     return (
@@ -51,13 +51,31 @@ export const UserList = () => {
                     </>)
                 })
             } else {
-                console.log(item.sortable + "...." + item.selector, " : ", item.name)
                 fetchedButtons.push(item);
             }
         });
         setColumn(fetchedButtons);
     }, []);
 
+    // Check Actions to render component in to the modal
+    let modalContent;
+    if (events === "edit") {
+        modalContent = <UserRegistration data={editrow}></UserRegistration>;
+    } else if (events === "delete") {
+        modalContent = <Delete data={editrow}></Delete>;
+    }else if (events === "add") {
+        modalContent = <UserRegistration></UserRegistration>;
+    } else {
+        modalContent = <h1 className='text-danger'>Import Component to render in modal</h1>;
+    }
+
+    
+    function addUser() {
+        console.log("Add user");
+        modalContent = <UserRegistration></UserRegistration>
+    }
+
+    // Fetch user list from an api
     const [users, setUsers] = useState([]);
     const [search, setSearch] = useState("");
     const [FilterUsers, setFilterUsers] = useState([]);
@@ -76,13 +94,15 @@ export const UserList = () => {
         setFilterUsers(result);
     }, [search]);
 
-
+    // To export table into excell sheet
     const tableRef = useRef(null);
     const { onDownload } = useDownloadExcel({
         currentTableRef: tableRef.current,
         filename: 'Users table',
         sheet: 'Users'
     })
+
+    
 
     return (
         <>
@@ -96,7 +116,12 @@ export const UserList = () => {
                 selectableRows
                 selectableRowsHighlight
                 highlightOnHover
-                actions={<button onClick={onDownload} className="btn btn-sm btn-info">Export</button>}
+                actions={(
+                    <>
+                        <button onClick={onDownload} className="btn btn-sm btn-info">Export</button>
+                        <button onClick={handleShow} className="btn btn-sm btn-primary">+ Add User</button>
+                    </>
+                )}
                 subHeader
                 subHeaderComponent={
                     <input
@@ -118,12 +143,13 @@ export const UserList = () => {
                 className='modal-lg'
             >
                 <Modal.Header closeButton>
-                    <Modal.Title className='text-center'>Edit User</Modal.Title>
+                    <Modal.Title className='text-center'>{events} User</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {console.log("]]]]]]]]]]]]]]]]")}
-                    {console.log(editrow)}
-                    <UserRegistration data={editrow}></UserRegistration>
+                    {modalContent}
+                    {/* {modalCon} */}
+
+                    {/* <UserRegistration data={editrow}></UserRegistration> */}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>

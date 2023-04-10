@@ -8,7 +8,7 @@ export default function UserRegistration(props) {
 
     const [userData, setUserData] = useState({});
     useEffect(() => {
-        console.log("user id : ", props.data)
+        console.log("user id-- : ", props.data)
         if (props.data != 0 && props.data != undefined) {
             fetchUser(props.data);
         }
