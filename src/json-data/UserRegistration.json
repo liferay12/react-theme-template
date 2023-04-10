@@ -17,7 +17,12 @@
                 "checked": false,
                 "hidden": false
             },
-            "provider": "https://jsonplaceholder.typicode.com/posts/1/comments",
+            "provider": {
+                "id": "test",
+                "url": "https://jsonplaceholder.typicode.com/posts/1/comments",
+                "value": "",
+                "hidden": false
+            },
             "value": "",
             "htmlElement": "text",
             "valid": false,

@@ -12,9 +12,8 @@ const Select = (props) => {
     useEffect(() => {
         console.log(" calling provider......")
         console.log("------> ")
-        if (props.fieldConfig.provider != "") {
-
-            getProviderList(props.fieldConfig.provider);
+        if (props.fieldConfig.provider.url != "") {
+            getProviderList(props.fieldConfig.provider.url);
         }
 
     }, [])
