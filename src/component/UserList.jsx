@@ -7,19 +7,22 @@ import { useDownloadExcel } from 'react-export-table-to-excel';
 import { ModalPopup } from './ModalPopup';
 import { Button, Modal } from 'react-bootstrap';
 import UserRegistration from './UserRegistration';
+import columns from '../json-data/DataTableColumns.json';
 
 export const UserList = () => {
     const [show, setShow] = useState(false);
-
+    const [column, setColumn] = useState(columns);
     const [editrow, setEditrow] = useState();
     const handleClose = () => setShow(false);
+
+
 
     const handleShow = (cell) => {
         setShow(true);
         setEditrow(cell);
         //console.log("editable data handleshow "+editrow);
     }
-    console.log("editable data "+editrow);
+    console.log("editable data " + editrow);
     const [users, setUsers] = useState([]);
     const [search, setSearch] = useState("");
     const [FilterUsers, setFilterUsers] = useState([]);
@@ -41,42 +44,6 @@ export const UserList = () => {
         setFilterUsers(result);
     }, [search]);
 
-    //    const openEditor=()=>{
-    //         alert("inside open editor");
-    //         <ModalPopup ></ModalPopup>
-    //     }
-
-    const column = [
-        {
-            name: "User Id",
-            selector: (row) => row.userId,
-            sortable: true
-        },
-        {
-            name: "Full Name",
-            selector: (row) => row.firstName + " " + row.lastName,
-            sortable: true
-        },
-        {
-            name: "Screen Name",
-            selector: (row) => row.screenName,
-            sortable: true
-        },
-        {
-            name: "Email Address",
-            selector: (row) => row.emailAddress,
-            sortable: true
-        },
-        {
-            name: "Company Id",
-            selector: (row) => row.companyId,
-            sortable: true
-        },
-        {
-            name: "Actions",
-            cell: (row)  => <button className="btn btn-primary" onClick={() => handleShow(row.userId)}>Edit</button>
-        }
-    ];
 
     const tableRef = useRef(null);
     const { onDownload } = useDownloadExcel({
@@ -87,6 +54,21 @@ export const UserList = () => {
 
     return (
         <>
+            <div>
+                {users}
+                {
+                    Object.keys(users.object).map((key, i) => (
+                        <>
+                            <p key={i}>
+                                <span>Key Name: {key}</span>
+                                <span>Value: {users.object[key]}</span>
+                            </p>
+                            <button key={i} className="btn btn-primary" onClick={() => alert("users.screenName")}>Edit</button>
+
+                        </>
+                    ))
+                }
+            </div>
             {/* <div>hello {users.screenName}</div> */}
             <DataTable
                 title="User List"

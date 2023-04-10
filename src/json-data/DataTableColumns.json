@@ -1,0 +1,31 @@
+[
+    {
+        "name": "User Id",
+        "selector": "userId",
+        "sortable": true
+    },
+    {
+        "name": "Full Name",
+        "selector": "firstName",
+        "sortable": true
+    },
+    {
+        "name": "Screen Name",
+        "selector": "screenName",
+        "sortable": true
+    },
+    {
+        "name": "Email Address",
+        "selector": "emailAddress",
+        "sortable": true
+    },
+    {
+        "name": "Company Id",
+        "selector": "companyId",
+        "sortable": true
+    },
+    {
+        "name": "Actions",
+        "cell": "edit"
+    }
+]
