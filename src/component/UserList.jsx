@@ -15,7 +15,13 @@ export const UserList = () => {
     const [editrow, setEditrow] = useState();
     const handleClose = () => setShow(false);
 
-    const [buttons, setButtons] = useState([]);
+    const handleShow = (cell) => {
+        setShow(true);
+        setEditrow(cell);
+        //console.log("editable data handleshow "+editrow);
+    }
+
+    // const [buttons, setButtons] = useState([]);
 
     useEffect(() => {
         const fetchedButtons = [];
@@ -24,25 +30,25 @@ export const UserList = () => {
                 fetchedButtons.push({
                     "name": "Actions", cell: (row) => (<>
                         {item.cell.map((i) => {
-                            if (i.name === "edit") {
-                                return (
-                                    <button className="btn btn-sm btn-primary" onClick={() => alert(row.userId)}><i class="fa fa-pencil"></i></button>
-                                )
-                            } else if (i.name === "delete") {
-                                return (
-                                    <button className="btn btn-sm btn-danger" onClick={() => alert(row.screenName)}><i class="fa fa-trash"></i></button>
-                                )
-                            } else {
-                                return (
-                                    <button className="btn btn-sm btn-warrnning" onClick={() => alert(row.screenName)}><i class={i.icon}></i>{i.name}</button>
-                                )
-                            }
+                            return (
+                                <button className={i.class} onClick={() => (handleShow(row.userId))}><i class={i.icon} aria-hidden="true">{i.lebel}</i></button>
+                            )
+                            // if (i.name === "edit") {
+                            //     return (
+                            //         <button className="btn btn-sm btn-primary" onClick={() => alert(row.userId)}><i class="fa fa-pencil"></i></button>
+                            //     )
+                            // } else if (i.name === "delete") {
+                            //     return (
+                            //         <button className="btn btn-sm btn-danger" onClick={() => alert(row.screenName)}><i class="fa fa-trash"></i></button>
+                            //     )
+                            // } else {
+                            //     return (
+                            //         <button className="btn btn-sm btn-warrnning" onClick={() => alert(row.screenName)}><i class={i.icon}></i>{i.name}</button>
+                            //     )
+                            // }
                         })
-
-
                         }
                     </>)
-
                 })
             } else {
                 console.log(item.sortable + "...." + item.selector, " : ", item.name)
@@ -52,16 +58,9 @@ export const UserList = () => {
         setColumn(fetchedButtons);
     }, []);
 
-    const handleShow = (cell) => {
-        setShow(true);
-        setEditrow(cell);
-        //console.log("editable data handleshow "+editrow);
-    }
-    console.log("editable data " + editrow);
     const [users, setUsers] = useState([]);
     const [search, setSearch] = useState("");
     const [FilterUsers, setFilterUsers] = useState([]);
-
     useEffect(() => {
         async function fetchUserList() {
             let user = await axios.get('http://localhost:8080/api/v1/user')
@@ -69,9 +68,7 @@ export const UserList = () => {
             setFilterUsers(user.data);
         };
         fetchUserList();
-
     }, []);
-
     useEffect(() => {
         const result = users.filter(user => {
             return null; //user.firstName.toLowerCase().match(search.toLowerCase());
@@ -124,6 +121,8 @@ export const UserList = () => {
                     <Modal.Title className='text-center'>Edit User</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
+                    {console.log("]]]]]]]]]]]]]]]]")}
+                    {console.log(editrow)}
                     <UserRegistration data={editrow}></UserRegistration>
                 </Modal.Body>
                 <Modal.Footer>

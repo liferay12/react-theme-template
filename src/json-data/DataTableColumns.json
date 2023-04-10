@@ -29,19 +29,21 @@
         "cell": [
             {
                 "name": "edit",
-                "lebel":"Edit",
+                "lebel":"",
                 "icon": "fa fa-pencil",
-                "class":
+                "class": "btn btn-sm btn-primary"
             },
             {
                 "name": "delete",
-                "lebel":"Edit",
-                "icon": "fa fa-trash"
+                "lebel":"",
+                "icon": "fa fa-trash",
+                "class": "btn btn-sm btn-danger"
             },
             {
                 "name": "update",
-                "lebel":"Edit",
-                "icon": ""
+                "lebel":"",
+                "icon": "fa fa-cloud-upload",
+                "class": "btn btn-sm btn-info"
             }
         ]
         

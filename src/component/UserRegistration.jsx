@@ -4,14 +4,17 @@ import userRegistration from "../json-data/UserRegistration.json"
 import toast from 'react-hot-toast';
 import axios from "axios";
 
-export default function UserRegistration() {
+export default function UserRegistration(props) {
 
     const [userData, setUserData] = useState({});
     useEffect(() => {
-        fetchUser();
+        console.log("user id : ", props.data)
+        if (props.data != 0 && props.data != undefined) {
+            fetchUser(props.data);
+        }
     }, []);
-    async function fetchUser() {
-        let data = await axios.get(`http://localhost:8080/api/v1/user/1`);
+    async function fetchUser(id) {
+        let data = await axios.get(`http://localhost:8080/api/v1/user/${id}`);
         let editData = data.data;
         setUserData(editData)
     };
@@ -20,7 +23,7 @@ export default function UserRegistration() {
         <div className='Home'>
             <div className='row'>
                 <div className='col-md-6 offset-md-3 card'>
-                    
+
                     <Form formObject={userRegistration} editData={userData} url={'http://localhost:8080/api/v1/user/1'} />
                 </div>
             </div>
