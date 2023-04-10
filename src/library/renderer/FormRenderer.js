@@ -35,7 +35,7 @@ const Form = (props) => {
             field.value = "";
         })
 
-    })
+    },[])
     return (
         <div className='container Form'>
             <h3 className='text-center'>{props.formObject.title}</h3>
