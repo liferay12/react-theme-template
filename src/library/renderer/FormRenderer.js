@@ -30,12 +30,7 @@ const Form = (props) => {
         })
     }
 
-    useEffect(() => {
-        fieldArray.map((field, index) => {
-            field.value = "";
-        })
 
-    },[])
     return (
         <div className='container Form'>
             <h3 className='text-center'>{props.formObject.title}</h3>

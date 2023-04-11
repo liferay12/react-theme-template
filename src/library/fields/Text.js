@@ -25,9 +25,9 @@ const Text = (props) => {
     return (
         <div className='form-group mt-3'>
             <label htmlFor={props.fieldConfig.id}>{props.fieldConfig.label}</label>
-            <input 
+            <input
 
-            //aria-describedby={(props.fieldConfig.id)+Feedback}
+                //aria-describedby={(props.fieldConfig.id)+Feedback}
                 id={props.fieldConfig.id}
                 type={props.fieldConfig.type}
                 name={props.fieldConfig.name}
@@ -44,7 +44,7 @@ const Text = (props) => {
                 minLength={props.fieldConfig.validation.minLength}
                 autocomplete={props.fieldConfig.validation.autocomplete}
                 autofocus={props.fieldConfig.validation.autofocus}
-                
+
             />
             {/* <div id={(props.fieldConfig.id)+Feedback}  className="invalid-feedback">{errors.name?.props.fieldConfig.errorMessage}</div> */}
             {/* <p style={{ color: 'red' }}>This field is required</p> */}

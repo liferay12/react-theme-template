@@ -22,6 +22,7 @@ const Renderer = (props) => {
     const [fieldArray, setFieldArray] = useState(props.fieldArray);
     let a;
     const fieldChange = (event, field, index) => {
+        console.log("***** " + event.target.value)
         setFieldArray(prev => prev.map((item, idx) => {
             if (index === idx) {
                 if (field.type === 'select') {
@@ -39,11 +40,16 @@ const Renderer = (props) => {
         if (props.d !== "" && props.d != undefined && Object.keys(props.d).length != 0) {
             let keys = Object.keys(props.d);
             keys.map((item, index) => {
-                props.fieldArray.map((fItem, index) => {
+                fieldArray.map((fItem, index) => {
                     if (fItem.name === item) {
                         fItem.value = props.d[item];
                     }
                 });
+            });
+        }else{
+            fieldArray.map((fItem, index) => {
+                
+                    fItem.value = "";
             });
         }
 
@@ -72,7 +78,9 @@ const Renderer = (props) => {
         }
         return element;
     }
-    initializeForm();
+    useEffect(() => {
+        initializeForm();
+    })
     return (
         <div className='mt-3'>
             {
