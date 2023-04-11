@@ -10,13 +10,15 @@ const Form = (props) => {
         e.preventDefault();
         var form = new FormData();
         fieldArray.map((item, index) => {
-            console.log('item..', item.value)
+            console.log('item..****.... ', item.value)
             if (item.value != "") {
                 form.append(item.name, item.value);
 
             }
         })
 
+        console.log("submit user id :::: "+form.get("userId"))
+        console.log("submit first name :::: "+form.get("firstName"))
         axios.post(props.url, form, {
             headers: {
                 "Content-Type": "application/json"
@@ -36,7 +38,7 @@ const Form = (props) => {
             <h3 className='text-center'>{props.formObject.title}</h3>
             <form onSubmit={(event) => { submit(event) }}>
 
-                <Renderer fieldArray={fieldArray} d={props.editData} setFieldArray={setFieldArray} />
+                <Renderer fieldArray={fieldArray} test={"testing"} fieldData={props.editData} setFieldArray={setFieldArray} />
                 <div className='text-center m-3 mb-2'>
                     <button type='submit' className='btn btn-lg btn-primary '>Submit</button>
                 </div>

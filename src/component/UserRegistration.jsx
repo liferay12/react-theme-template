@@ -7,6 +7,7 @@ import axios from "axios";
 export default function UserRegistration(props) {
 
     const [userData, setUserData] = useState({});
+    let url = 'http://localhost:8080/api/v1/user';
     useEffect(() => {
         console.log("user id-- : ", props.data)
         if (props.data != 0 && props.data != undefined) {
@@ -14,7 +15,8 @@ export default function UserRegistration(props) {
         }
     }, []);
     async function fetchUser(id) {
-        let data = await axios.get(`http://localhost:8080/api/v1/user/${id}`);
+        url = `http://localhost:8080/api/v1/user/${id}`;
+        let data = await axios.get(url);
         let editData = data.data;
         setUserData(editData)
     };
@@ -24,7 +26,7 @@ export default function UserRegistration(props) {
             <div className='row'>
                 <div className='col-md-6 offset-md-3 card'>
 
-                    <Form formObject={userRegistration} editData={userData} url={'http://localhost:8080/api/v1/user/1'} />
+                    <Form formObject={userRegistration} editData={userData} url={url} />
                 </div>
             </div>
         </div>

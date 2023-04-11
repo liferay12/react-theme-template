@@ -19,8 +19,16 @@ import 'bootstrap/dist/js/bootstrap';
 import 'jquery/dist/jquery';
 
 const Renderer = (props) => {
+    const { formObject } = props;
     const [fieldArray, setFieldArray] = useState(props.fieldArray);
+    const [t, setT] = useState(props.fieldData);
+    let test = t;
     let a;
+    useEffect(() => {
+        // initializeForm();
+        console.log("@@@@@@@@@@@@@@@@@@@@@@2")
+        console.log(props.test);
+    }, [])
     const fieldChange = (event, field, index) => {
         console.log("***** " + event.target.value)
         setFieldArray(prev => prev.map((item, idx) => {
@@ -36,25 +44,26 @@ const Renderer = (props) => {
             return item;
         }));
     }
-    const initializeForm = () => {
-        if (props.d !== "" && props.d != undefined && Object.keys(props.d).length != 0) {
-            let keys = Object.keys(props.d);
-            keys.map((item, index) => {
-                fieldArray.map((fItem, index) => {
-                    if (fItem.name === item) {
-                        fItem.value = props.d[item];
-                    }
-                });
-            });
-        }else{
-            fieldArray.map((fItem, index) => {
-                
-                    fItem.value = "";
-            });
-        }
+    // const initializeForm = () => {
+    //     if (props.d !== "" && props.d != undefined && Object.keys(props.d).length != 0) {
+    //         let keys = Object.keys(props.d);
+    //         keys.map((item, index) => {
+    //             fieldArray.map((fItem, index) => {
+    //                 if (fItem.name === item) {
+    //                     fItem.value = props.d[item];
+    //                 }
+    //             });
+    //         });
+    //     }
+    //     // else {
+    //     //     fieldArray.map((fItem, index) => {
+
+    //     //         fItem.value = "";
+    //     //     });
+    //     // }
 
 
-    }
+    // }
 
     const setField = (field, index) => {
         let element = <></>;
@@ -78,11 +87,11 @@ const Renderer = (props) => {
         }
         return element;
     }
-    useEffect(() => {
-        initializeForm();
-    })
+
     return (
+
         <div className='mt-3'>
+
             {
                 fieldArray.map((field, index) => (
                     <div key={`${field.id}_${index}`}>
