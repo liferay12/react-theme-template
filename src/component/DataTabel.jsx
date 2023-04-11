@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import DataTable from 'react-data-table-component';
 import { useDownloadExcel } from 'react-export-table-to-excel';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Dropdown, Modal } from 'react-bootstrap';
 import UserRegistration from './UserRegistration';
 import columns from '../json-data/DataTableColumns.json';
 import { Delete } from './Delete';
@@ -20,7 +20,7 @@ export const DataTabel = (props) => {
         setShow(true);
         setEvents(name);
         setEditrow(id);
-        
+
 
     }
     useEffect(() => {
@@ -29,25 +29,32 @@ export const DataTabel = (props) => {
             if (item.name === "Actions" && item.cell.length !== 0) {
                 fetchedButtons.push({
                     "name": "Actions", cell: (row) => (<>
-                        {item.cell.map((i) => {
-                            return (
-                                <button className={i.class} onClick={() => (handleShow(i.name, row.userId))}><i class={i.icon} aria-hidden="true">{i.lebel}</i></button>
-                            )
-                            // if (i.name === "edit") {
-                            //     return (
-                            //         <button className="btn btn-sm btn-primary" onClick={() => alert(row.userId)}><i class="fa fa-pencil"></i></button>
-                            //     )
-                            // } else if (i.name === "delete") {
-                            //     return (
-                            //         <button className="btn btn-sm btn-danger" onClick={() => alert(row.screenName)}><i class="fa fa-trash"></i></button>
-                            //     )
-                            // } else {
-                            //     return (
-                            //         <button className="btn btn-sm btn-warrnning" onClick={() => alert(row.screenName)}><i class={i.icon}></i>{i.name}</button>
-                            //     )
-                            // }
-                        })
-                        }
+                        {/* <Dropdown>
+                            <Dropdown.Toggle>
+                                <i className="fa-thin fa-ellipsis-vertical"></i>
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu> */}
+                        <div class="dropdown">
+                            <div type="button"   data-bs-toggle="dropdown">
+                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                            </div>
+                            <ul class="dropdown-menu">
+                                {item.cell.map((i) => {
+                                    return (
+                                        <>
+
+                                            <li onClick={() => (handleShow(i.name, row.userId))}><span className={i.class} ><i class={i.icon} aria-hidden="true"></i>{i.lebel}</span></li>
+
+
+                                            {/* <Dropdown.Item onClick={() => (handleShow(i.name, row.userId))}><span className={i.class} ><i class={i.icon} aria-hidden="true"></i>{i.lebel}</span></Dropdown.Item> */}
+                                            {/* <button className={i.class} onClick={() => (handleShow(i.name, row.userId))}><i class={i.icon} aria-hidden="true">{i.lebel}</i></button> */}
+                                        </>
+                                    )
+                                })
+                                }
+                            </ul>
+                        </div>
+                        {/* </Dropdown.Menu></Dropdown> */}
                     </>)
                 })
             } else {
@@ -63,10 +70,10 @@ export const DataTabel = (props) => {
         modalContent = <UserRegistration data={editrow}></UserRegistration>;
     } else if (events === "delete") {
         modalContent = <Delete data={editrow}></Delete>;
-    } 
+    }
     else if (events === "add") {
         modalContent = <UserRegistration></UserRegistration>;
-    } 
+    }
     else {
         modalContent = <h1 className='text-danger'>Import Component to render in modal</h1>;
     }
@@ -104,19 +111,20 @@ export const DataTabel = (props) => {
         sheet: 'Users'
     })
 
-    const addUser = (add) => {
-        console.log("Addig user ********************* " + add)
-        setEvents(add);
-        handleShow(add);
-        //modalContent = <UserRegistration></UserRegistration>
-    }
-    const [isShown, setIsShown] = useState("");
+    // const addUser = (add) => {
+    //     console.log("Addig user ********************* " + add)
+    //     setEvents(add);
+    //     handleShow(add);
+    //     //modalContent = <UserRegistration></UserRegistration>
+    // }
 
+    // Add Button click method
+    const [isShown, setIsShown] = useState("");
     const handleClick = event => {
         // 👇️ toggle shown state
         //setIsShown(current => !current);
         setIsShown("add");
-        handleShow(isShown,"");
+        handleShow(isShown, "");
 
         // 👇️ or simply set it to true
         // setIsShown(true);
@@ -124,8 +132,6 @@ export const DataTabel = (props) => {
 
     return (
         <>
-            {console.log("from list " + props.data)}
-            
             <DataTable
                 title="User List"
                 columns={column}
@@ -140,7 +146,7 @@ export const DataTabel = (props) => {
                     <>
                         <button onClick={onDownload} className="btn btn-sm btn-info">Export</button>
                         <button onClick={handleClick} className="btn btn-sm btn-primary">+ Add User</button>
-                        
+
                     </>
                 )}
                 subHeader
@@ -163,16 +169,16 @@ export const DataTabel = (props) => {
                 keyboard={false}
                 className='modal-lg'
             >
-                <Modal.Header closeButton style={{background:"#f0f8ff"}}>
+                <Modal.Header closeButton style={{ background: "#f0f8ff" }}>
                     <Modal.Title className='text-center'>{events} User</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    { modalContent}
+                    {modalContent}
                     {/* {modalCon} */}
                     {/* {isShown ? <UserRegistration /> : modalContent} */}
                     {/* <UserRegistration data={editrow}></UserRegistration> */}
                 </Modal.Body>
-                <Modal.Footer style={{background:"#f0f8ff"}}>
+                <Modal.Footer style={{ background: "#f0f8ff" }}>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>

@@ -35,15 +35,15 @@
             },
             {
                 "name": "delete",
-                "lebel":"",
+                "lebel":"Delete",
                 "icon": "fa fa-trash",
                 "class": "btn btn-sm btn-danger"
             },
             {
                 "name": "update",
-                "lebel":"",
+                "lebel":"Update",
                 "icon": "fa fa-cloud-upload",
-                "class": "btn btn-sm btn-info"
+                "class": ""
             }
         ]
         
