@@ -4,7 +4,7 @@
     "subTitle": "",
     "fields": [
         {
-            "type": "text",
+            "type": "hidden",
             "id": "userId",
             "name": "userId",
             "label": "user id",
