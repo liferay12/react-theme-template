@@ -1,23 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import RoleForm from "../json-data/role.json"
 import Form from '../library/renderer/FormRenderer';
 import toast from 'react-hot-toast';
 import axios from "axios";
-export const Role = () => {
-    const submitFunc = (formData) => {
-        console.log("role form .........")
-        console.log(formData.get("userName"));
-        console.log(formData.get("name"));
-        console.log(formData.get("title"));
-        console.log(formData.get("type"));
-        console.log(formData.get("subType"));
-
-    }
+export const Role = (props) => {
+    const [roleData, setRoleData] = useState({});
+    let url = 'http://localhost:8080/api/v1/role';
+    useEffect(() => {
+        console.log("user id-- : ", props.data)
+        if (props.data != 0 && props.data != undefined) {
+            fetchUser(props.data);
+        }
+    }, []);
+    async function fetchUser(id) {
+        url = `http://localhost:8080/api/v1/user/${id}`;
+        let data = await axios.get(url);
+        let editData = data.data;
+        setRoleData(editData)
+    };
     return (
         <div className='Home'>
             <div className='row'>
                 <div className='col-md-6 offset-md-3 card'>
-                    <Form formObject={RoleForm} data={''} url={'http://localhost:8080/api/v1/role'} />
+                    {console.log("!!!!!!!!!!!!")}
+                    {console.log(RoleForm)}
+                    <Form formObject={RoleForm} editData={roleData} url={url} />
                 </div>
             </div>
         </div>

@@ -35,7 +35,7 @@ export const DataTabel = (props) => {
                             </Dropdown.Toggle>
                             <Dropdown.Menu> */}
                         <div class="dropdown">
-                            <div type="button"   data-bs-toggle="dropdown">
+                            <div type="button" data-bs-toggle="dropdown">
                                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                             </div>
                             <ul class="dropdown-menu">
@@ -69,7 +69,7 @@ export const DataTabel = (props) => {
     if (events === "edit") {
         modalContent = <UserRegistration data={editrow}></UserRegistration>;
     } else if (events === "delete") {
-        modalContent = <Delete data={editrow}></Delete>;
+        modalContent = <Delete data={editrow} url={props.url}></Delete>;
     }
     else if (events === "add") {
         modalContent = <UserRegistration></UserRegistration>;
@@ -178,12 +178,12 @@ export const DataTabel = (props) => {
                     {/* {isShown ? <UserRegistration /> : modalContent} */}
                     {/* <UserRegistration data={editrow}></UserRegistration> */}
                 </Modal.Body>
-                <Modal.Footer style={{ background: "#f0f8ff" }}>
+                {/* <Modal.Footer style={{ background: "#f0f8ff" }}>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    {/* <Button variant="primary">Understood</Button> */}
-                </Modal.Footer>
+                    <Button variant="primary">Understood</Button>
+                </Modal.Footer> */}
             </Modal>
         </>
     )

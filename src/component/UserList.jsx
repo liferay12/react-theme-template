@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { DataTabel } from "./DataTabel";
 
-export const UserList = () =>{
+export const UserList = () => {
 
     const [users, setUsers] = useState([]);
     const [search, setSearch] = useState("");
@@ -21,11 +21,11 @@ export const UserList = () =>{
         })
         setFilterUsers(result);
     }, [search]);
-return(
-    <>
-        <DataTabel data={FilterUsers} setSearch={setSearch}></DataTabel>
-    </>
-)
+    return (
+        <>
+            <DataTabel data={FilterUsers} setSearch={setSearch} url={'localhost:8080/api/v1/user'}></DataTabel>
+        </>
+    )
 
-    
+
 }
