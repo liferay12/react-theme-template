@@ -6,6 +6,7 @@ const Form = (props) => {
     const { formObject } = props;
     const [fieldArray, setFieldArray] = useState(formObject.fields);
     const [formData, setFormData] = useState([]);
+    // const [fieldData, setFieldData] = useState(props.editData);
     const submit = (e) => {
         e.preventDefault();
         var form = new FormData();
@@ -17,8 +18,8 @@ const Form = (props) => {
             }
         })
 
-        console.log("submit user id :::: "+form.get("userId"))
-        console.log("submit first name :::: "+form.get("firstName"))
+        console.log("submit user id :::: " + form.get("userId"))
+        console.log("submit first name :::: " + form.get("firstName"))
         axios.post(props.url, form, {
             headers: {
                 "Content-Type": "application/json"
@@ -37,8 +38,7 @@ const Form = (props) => {
         <div className='container Form'>
             <h3 className='text-center'>{props.formObject.title}</h3>
             <form onSubmit={(event) => { submit(event) }}>
-
-                <Renderer fieldArray={fieldArray} test={"testing"} fieldData={props.editData} setFieldArray={setFieldArray} />
+                <Renderer fieldArray={fieldArray}  fieldData={props.editData} setFieldArray={setFieldArray} />
                 <div className='text-center m-3 mb-2'>
                     <button type='submit' className='btn btn-lg btn-primary '>Submit</button>
                 </div>

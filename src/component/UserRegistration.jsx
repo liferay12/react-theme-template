@@ -25,7 +25,6 @@ export default function UserRegistration(props) {
         <div className='Home'>
             <div className='row'>
                 <div className='col-md-6 offset-md-3 card'>
-
                     <Form formObject={userRegistration} editData={userData} url={url} />
                 </div>
             </div>

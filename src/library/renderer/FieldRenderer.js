@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Select from '../fields/Select';
 import Text from '../fields/Text';
 import TextArea from '../fields/TextArea';
@@ -19,77 +19,71 @@ import 'bootstrap/dist/js/bootstrap';
 import 'jquery/dist/jquery';
 
 const Renderer = (props) => {
-    const { formObject } = props;
+    const { formObject } = props.fieldData;
     const [fieldArray, setFieldArray] = useState(props.fieldArray);
-    const [t, setT] = useState(props.fieldData);
-    let test = t;
-    let a;
-    useEffect(() => {
-        // initializeForm();
-        console.log("@@@@@@@@@@@@@@@@@@@@@@2")
-        console.log(props.test);
-    }, [])
-    const fieldChange = (event, field, index) => {
-        console.log("***** " + event.target.value)
+    const fieldChange = (event, field, index, fieldData) => {
+        console.log("***** " + event.target.name)
         setFieldArray(prev => prev.map((item, idx) => {
             if (index === idx) {
                 if (field.type === 'select') {
                     item.value = event.value;
+                    fieldData[event.target.name] = event.value;
                 } else if (field.type === "tel") {
                     item.value = event;
+                    fieldData[event.target.name] = event;
                 } else {
                     item.value = event.target.value;
+                    fieldData[event.target.name] = event.target.value;
                 }
             }
             return item;
         }));
     }
-    // const initializeForm = () => {
-    //     if (props.d !== "" && props.d != undefined && Object.keys(props.d).length != 0) {
-    //         let keys = Object.keys(props.d);
-    //         keys.map((item, index) => {
-    //             fieldArray.map((fItem, index) => {
-    //                 if (fItem.name === item) {
-    //                     fItem.value = props.d[item];
-    //                 }
-    //             });
-    //         });
-    //     }
-    //     // else {
-    //     //     fieldArray.map((fItem, index) => {
+    const initializeForm = () => {
+        if (props.fieldData !== "" && props.fieldData != undefined && Object.keys(props.fieldData).length != 0) {
+            let keys = Object.keys(props.fieldData);
+            keys.map((item, index) => {
+                fieldArray.map((fItem, index) => {
+                    if (fItem.name === item) {
+                        fItem.value = props.fieldData[item];
+                    }
+                });
+            });
+        }
+        else {
+            fieldArray.map((fItem, index) => {
+                fItem.value = "";
+            });
+        }
+        return fieldArray;
+    }
 
-    //     //         fItem.value = "";
-    //     //     });
-    //     // }
-
-
-    // }
 
     const setField = (field, index) => {
         let element = <></>;
         switch (field.type) {
-            case 'select': element = (<Select key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'text': element = (<Text key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'textarea': element = (<TextArea key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'checkbox': element = (<CheckBox key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'number': element = (<Number key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'file': element = (<File key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'date': element = (<Date key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'radio': element = (<Radio key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'autocomplete': element = (<AutoComplete key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'email': element = (<Email key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'tel': element = (<Tel key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'password': element = (<Password key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'month': element = (<Month key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'datetime': element = (<DateTime key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
-            case 'otp': element = (<Otp key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index)} />); break;
+            case 'select': element = (<Select key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'text': element = (<Text key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'textarea': element = (<TextArea key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'checkbox': element = (<CheckBox key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'number': element = (<Number key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'file': element = (<File key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'date': element = (<Date key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'radio': element = (<Radio key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'autocomplete': element = (<AutoComplete key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'email': element = (<Email key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'tel': element = (<Tel key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'password': element = (<Password key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'month': element = (<Month key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'datetime': element = (<DateTime key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
+            case 'otp': element = (<Otp key={field.id} fieldConfig={field} changed={(event) => fieldChange(event, field, index, props.fieldData)} />); break;
             default: break;
         }
         return element;
     }
 
+    initializeForm();
     return (
-
         <div className='mt-3'>
 
             {
